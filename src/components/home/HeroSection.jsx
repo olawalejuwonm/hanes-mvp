@@ -1,5 +1,7 @@
+'use client';
+
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
 import { Play, QrCode, ChevronDown } from "lucide-react";
@@ -91,14 +93,14 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            to={createPageUrl("WelshIcons")}
+            href={createPageUrl("WelshIcons")}
             className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#C8102E] to-[#8B0A1E] rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
           >
             <Play className="w-4 h-4" />
             Begin Your Journey
           </Link>
           <Link
-            to={createPageUrl("QRCards")}
+            href={createPageUrl("QRCards")}
             className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white/80 font-medium text-sm tracking-wide hover:bg-white/10 transition-all duration-300"
           >
             <QrCode className="w-4 h-4" />

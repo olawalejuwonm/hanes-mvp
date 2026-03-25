@@ -1,6 +1,8 @@
+'use client';
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { Swords, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +21,7 @@ export default function IconCard({ icon, index }) {
       transition={{ delay: index * 0.08 }}
     >
       <Link
-        to={createPageUrl(`IconDetail?id=${icon.id}`)}
+        href={createPageUrl(`IconDetail?id=${icon.id}`)}
         className="group block rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#D4A843]/20 overflow-hidden transition-all duration-500 hover:bg-white/[0.04]"
       >
         <div className="aspect-[4/3] relative overflow-hidden">

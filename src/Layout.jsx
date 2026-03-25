@@ -1,9 +1,10 @@
+'use client';
+
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { Menu, X, MapPin, Users, Clock, QrCode, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import AudioPlayer from "@/components/AudioPlayer";
 
 const navItems = [
   { name: "Home", page: "Home", icon: Home },
@@ -25,7 +26,7 @@ export default function Layout({ children, currentPageName }) {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
-            <Link to={createPageUrl("Home")} className="flex items-center gap-3">
+            <Link href={createPageUrl("Home")} className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#8B0A1E] flex items-center justify-center">
                 <span className="text-white font-black text-sm">H</span>
               </div>
@@ -39,7 +40,7 @@ export default function Layout({ children, currentPageName }) {
               {navItems.map((item) => (
                 <Link
                   key={item.page}
-                  to={createPageUrl(item.page)}
+                  href={createPageUrl(item.page)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     currentPageName === item.page
                       ? "text-[#C8102E] bg-[#C8102E]/10"
@@ -76,5 +77,27 @@ export default function Layout({ children, currentPageName }) {
                   return (
                     <Link
                       key={item.page}
-                      to={createPageUrl(item.page)}
+                      href={createPageUrl(item.page)}
                       onClick={() => setMenuOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                        currentPageName === item.page
+                          ? "text-[#C8102E] bg-[#C8102E]/10"
+                          : "text-white/60 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      {/* Page content */}
+      <main>{children}</main>
+    </div>
+  );
+}
