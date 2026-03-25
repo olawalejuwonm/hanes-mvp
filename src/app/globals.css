@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+
+  /* Welsh Brand Colours */
+  --welsh-red: #c8102e;
+  --welsh-green: #00843d;
+  --welsh-gold: #ffd700;
+  --welsh-white: #ffffff;
+  --welsh-dark: #1a1a2e;
+  --welsh-red-dark: #9b0c22;
+  --welsh-green-dark: #006630;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Welsh Brand Colours */
+  --color-welsh-red: var(--welsh-red);
+  --color-welsh-green: var(--welsh-green);
+  --color-welsh-gold: var(--welsh-gold);
+  --color-welsh-white: var(--welsh-white);
+  --color-welsh-dark: var(--welsh-dark);
+  --color-welsh-red-dark: var(--welsh-red-dark);
+  --color-welsh-green-dark: var(--welsh-green-dark);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
