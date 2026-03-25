@@ -79,4 +79,15 @@ export const base44 = {
       list: async () => mockLocations,
     },
   },
+  auth: {
+    me: async () => {
+      throw new Error("Not authenticated");
+    },
+    logout: (redirectUrl) => {
+      console.log("Logout called with redirect:", redirectUrl);
+    },
+    redirectToLogin: (returnUrl) => {
+      console.log("Redirect to login with return URL:", returnUrl);
+    },
+  },
 };
