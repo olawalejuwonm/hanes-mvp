@@ -4,15 +4,15 @@ import React, { createContext, useContext, useState } from 'react';
 import translations from '@/i18n/translations';
 
 const LanguageContext = createContext({
-  lang: 'cy',
-  t: translations.cy,
+  lang: 'en',
+  t: translations.en,
   toggleLang: () => {},
 });
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
-    if (typeof window === 'undefined') return 'cy';
-    return localStorage.getItem('hanes-lang') || 'cy';
+    if (typeof window === 'undefined') return 'en';
+    return localStorage.getItem('hanes-lang') || 'en';
   });
 
   const toggleLang = () =>
