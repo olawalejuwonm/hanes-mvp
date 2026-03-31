@@ -1,7 +1,5 @@
 'use client';
 
-import React, { useRef, useEffect } from "react";
-
 const CASTLE_COLORS = {
   castle: { primary: "#4A5568", accent: "#D4A843", sky: "#1a2744" },
   abbey: { primary: "#6B7280", accent: "#9B6BC4", sky: "#1a1a2e" },
