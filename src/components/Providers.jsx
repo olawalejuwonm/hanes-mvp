@@ -2,11 +2,14 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
+import { ThemeProvider } from 'next-themes';
+import { LanguageProvider } from '@/context/LanguageContext';
 import Layout from '@/Layout';
 import { usePathname } from 'next/navigation';
 
 const PAGE_NAME_MAP = {
   '/': 'Home',
+  '/Home': 'Home',
   '/WelshIcons': 'WelshIcons',
   '/IconDetail': 'IconDetail',
   '/Locations': 'Locations',
@@ -28,10 +31,14 @@ export default function Providers({ children }) {
   const currentPageName = PAGE_NAME_MAP[pathname] ?? '';
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Layout currentPageName={currentPageName}>
-        {children}
-      </Layout>
-    </QueryClientProvider>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <LanguageProvider>
+        <QueryClientProvider client={queryClient}>
+          <Layout currentPageName={currentPageName}>
+            {children}
+          </Layout>
+        </QueryClientProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

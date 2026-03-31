@@ -4,12 +4,43 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* App-level semantic tokens */
 :root {
+  /* Welsh brand colors - same in both themes */
   --hanes-red: #C8102E;
   --hanes-green: #00703C;
-  --hanes-white: #F5F0EB;
-  --hanes-slate: #0F1410;
-  --hanes-mist: #E8E4DF;
+  --hanes-gold: #D4A843;
+
+  /* Light mode */
+  --app-bg: #F0EDE6;
+  --app-bg-nav: rgba(240, 237, 230, 0.92);
+  --app-surface: rgba(0, 0, 0, 0.03);
+  --app-surface-hover: rgba(0, 0, 0, 0.06);
+  --app-border: rgba(0, 0, 0, 0.08);
+  --app-border-hover: rgba(0, 0, 0, 0.15);
+  --app-text: #1a1a1a;
+  --app-text-muted: rgba(26, 26, 26, 0.55);
+  --app-text-subtle: rgba(26, 26, 26, 0.35);
+  --app-overlay: rgba(240, 237, 230, 0.9);
+  --app-card-gradient-from: rgba(0, 0, 0, 0.6);
+  --app-dot-bg: #F0EDE6;
+  --app-scrollbar-track: #d8d4cc;
+}
+
+.dark {
+  --app-bg: #0D0F13;
+  --app-bg-nav: rgba(13, 15, 19, 0.9);
+  --app-surface: rgba(255, 255, 255, 0.02);
+  --app-surface-hover: rgba(255, 255, 255, 0.04);
+  --app-border: rgba(255, 255, 255, 0.05);
+  --app-border-hover: rgba(255, 255, 255, 0.10);
+  --app-text: rgba(255, 255, 255, 1);
+  --app-text-muted: rgba(255, 255, 255, 0.5);
+  --app-text-subtle: rgba(255, 255, 255, 0.3);
+  --app-overlay: rgba(13, 15, 19, 0.9);
+  --app-card-gradient-from: rgba(13, 15, 19, 1);
+  --app-dot-bg: #0D0F13;
+  --app-scrollbar-track: #1a1a2a;
 }
 
 @layer base {
@@ -34,11 +65,6 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -68,8 +94,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--app-bg);
+    color: var(--app-text);
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -78,7 +106,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a2a;
+  background: var(--app-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
   background: #C8102E;

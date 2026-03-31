@@ -8,9 +8,9 @@ import { Swords, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const difficultyColors = {
-  beginner: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  intermediate: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-  advanced: "bg-red-500/10 text-red-400 border-red-500/20",
+  beginner: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
+  intermediate: "bg-amber-500/10 text-amber-500 border-amber-500/20",
+  advanced: "bg-red-500/10 text-red-500 border-red-500/20",
 };
 
 export default function IconCard({ icon, index }) {
@@ -22,7 +22,19 @@ export default function IconCard({ icon, index }) {
     >
       <Link
         href={createPageUrl(`IconDetail?id=${icon.id}`)}
-        className="group block rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#D4A843]/20 overflow-hidden transition-all duration-500 hover:bg-white/[0.04]"
+        className="group block rounded-2xl overflow-hidden transition-all duration-500"
+        style={{
+          background: "var(--app-surface)",
+          border: "1px solid var(--app-border)",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "rgba(212,168,67,0.25)";
+          e.currentTarget.style.background = "var(--app-surface-hover)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "var(--app-border)";
+          e.currentTarget.style.background = "var(--app-surface)";
+        }}
       >
         <div className="aspect-[4/3] relative overflow-hidden">
           {icon.image_url ? (
@@ -32,12 +44,15 @@ export default function IconCard({ icon, index }) {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-[#D4A843]/10 to-transparent flex items-center justify-center">
+            <div
+              className="w-full h-full flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, rgba(212,168,67,0.10) 0%, transparent 100%)" }}
+            >
               <Swords className="w-12 h-12 text-[#D4A843]/30" />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F13] via-transparent to-transparent" />
-          
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--app-card-gradient-from) 0%, transparent 60%)" }} />
+
           {icon.difficulty && (
             <div className="absolute top-3 right-3">
               <Badge className={`text-[10px] ${difficultyColors[icon.difficulty]}`}>
@@ -52,13 +67,13 @@ export default function IconCard({ icon, index }) {
             <span className="text-[#D4A843] text-[10px] tracking-[0.2em] uppercase font-medium">
               {icon.era || "Unknown Era"}
             </span>
-            <span className="text-white/20 text-[10px]">{icon.era_years}</span>
+            <span className="text-[10px]" style={{ color: "var(--app-text-subtle)" }}>{icon.era_years}</span>
           </div>
-          <h3 className="text-lg font-semibold text-white/90 mb-1 group-hover:text-[#D4A843] transition-colors">
+          <h3 className="text-lg font-semibold mb-1 group-hover:text-[#D4A843] transition-colors" style={{ color: "var(--app-text)" }}>
             {icon.name}
           </h3>
-          <p className="text-xs text-white/30 mb-3">{icon.title}</p>
-          <p className="text-sm text-white/40 line-clamp-2 leading-relaxed">
+          <p className="text-xs mb-3" style={{ color: "var(--app-text-subtle)" }}>{icon.title}</p>
+          <p className="text-sm line-clamp-2 leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
             {icon.description}
           </p>
           <div className="flex items-center gap-1 mt-4 text-xs text-[#D4A843]/60 group-hover:text-[#D4A843] transition-colors">

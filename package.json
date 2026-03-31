@@ -10,7 +10,6 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "next": "^14.2.29",
     "@hello-pangea/dnd": "^17.0.0",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -54,7 +53,8 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.475.0",
     "moment": "^2.30.1",
-    "next-themes": "^0.4.4",
+    "next": "^14.2.29",
+    "next-themes": "^0.4.6",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.2.0",

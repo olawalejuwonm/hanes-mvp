@@ -4,11 +4,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, QrCode, Printer, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function QRCardDisplay({ location, index }) {
+  const { t } = useLanguage();
   const hasCoords = location.latitude && location.longitude;
 
-  // Use qr_code_id as the direct URL if it looks like a URL, otherwise fall back to coords/search
   const mapsUrl = location.qr_code_id?.startsWith("http")
     ? location.qr_code_id
     : hasCoords
@@ -66,26 +67,49 @@ export default function QRCardDisplay({ location, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.08 }}
-      className="group rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#D4A843]/20 overflow-hidden transition-all duration-500"
+      className="group rounded-2xl overflow-hidden transition-all duration-500"
+      style={{
+        background: "var(--app-surface)",
+        border: "1px solid var(--app-border)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "rgba(212,168,67,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--app-border)";
+      }}
     >
       {/* Card header */}
-      <div className="bg-gradient-to-r from-[#D4A843]/5 to-transparent p-5 border-b border-white/5">
+      <div
+        className="p-5"
+        style={{
+          background: "linear-gradient(90deg, rgba(212,168,67,0.06) 0%, transparent 100%)",
+          borderBottom: "1px solid var(--app-border)",
+        }}
+      >
         <div className="flex items-center gap-2">
           <QrCode className="w-4 h-4 text-[#D4A843]" />
           <span className="text-[10px] text-[#D4A843] tracking-[0.2em] uppercase font-medium">
-            HANES Card
+            {t.qrCards.hanesCard}
           </span>
         </div>
       </div>
 
       {/* QR Code */}
       <div className="p-8 flex flex-col items-center">
-        <h3 className="text-lg font-semibold text-white/90 mb-1">{location.name}</h3>
+        <h3 className="text-lg font-semibold mb-1" style={{ color: "var(--app-text)" }}>
+          {location.name}
+        </h3>
         {location.era && (
-          <p className="text-[10px] text-white/30 tracking-widest uppercase mb-6">{location.era}</p>
+          <p className="text-[10px] tracking-widest uppercase mb-6" style={{ color: "var(--app-text-subtle)" }}>
+            {location.era}
+          </p>
         )}
-        
-        <div className="w-48 h-48 rounded-xl overflow-hidden bg-[#0A0C0F] p-3 border border-white/5 mb-6">
+
+        <div
+          className="w-48 h-48 rounded-xl overflow-hidden p-3 mb-6"
+          style={{ background: "#0A0C0F", border: "1px solid var(--app-border)" }}
+        >
           <img
             src={qrUrl}
             alt={`QR code for ${location.name}`}
@@ -94,11 +118,13 @@ export default function QRCardDisplay({ location, index }) {
         </div>
 
         {location.description && (
-          <p className="text-xs text-white/30 text-center line-clamp-2 mb-6">{location.description}</p>
+          <p className="text-xs text-center line-clamp-2 mb-6" style={{ color: "var(--app-text-subtle)" }}>
+            {location.description}
+          </p>
         )}
 
         {hasCoords && (
-          <div className="flex items-center gap-1.5 text-[10px] text-white/20 mb-5">
+          <div className="flex items-center gap-1.5 text-[10px] mb-5" style={{ color: "var(--app-text-subtle)" }}>
             <MapPin className="w-3 h-3 text-[#D4A843]/40" />
             <span>{location.latitude.toFixed(4)}° N, {Math.abs(location.longitude).toFixed(4)}° W</span>
           </div>
@@ -108,27 +134,40 @@ export default function QRCardDisplay({ location, index }) {
           <Button
             onClick={handlePrint}
             variant="outline"
-            className="bg-white/5 border-white/10 text-white/60 hover:text-white hover:bg-white/10 text-xs"
+            className="text-xs"
+            style={{
+              background: "var(--app-surface)",
+              border: "1px solid var(--app-border)",
+              color: "var(--app-text-muted)",
+            }}
           >
             <Printer className="w-3 h-3 mr-2" />
-            Print Card
+            {t.qrCards.printCard}
           </Button>
           <a
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 text-xs transition-all"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs transition-all"
+            style={{
+              background: "var(--app-surface)",
+              border: "1px solid var(--app-border)",
+              color: "var(--app-text-muted)",
+            }}
           >
             <ExternalLink className="w-3 h-3" />
-            Open Map
+            {t.qrCards.openMap}
           </a>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-3 border-t border-white/5 flex items-center gap-2 text-white/20 text-[10px]">
+      <div
+        className="px-5 py-3 flex items-center gap-2 text-[10px]"
+        style={{ borderTop: "1px solid var(--app-border)", color: "var(--app-text-subtle)" }}
+      >
         <MapPin className="w-3 h-3" />
-        <span>Scan QR to navigate to the real location</span>
+        <span>{t.qrCards.scanHint}</span>
       </div>
     </motion.div>
   );
