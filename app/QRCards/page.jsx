@@ -1,4 +1,4 @@
-import QRCards from '@/pages/QRCards';
+import QRCards from '@/views/QRCards';
 
 export default function QRCardsPage() {
   return <QRCards />;

@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Gamepad2, QrCode, Globe, Swords, MapPin, Sparkles } from "lucide-react";

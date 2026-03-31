@@ -1,18 +1,15 @@
+'use client';
+
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
-import { Loader2, MapPin, X } from "lucide-react";
+import { MapPin, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationCard from "@/components/locations/LocationCard";
 import Scene3D from "@/components/viewer/Scene3D";
+import { WELSH_LOCATIONS } from "@/data/mockData";
 
 export default function Locations() {
   const [selected, setSelected] = useState(null);
-
-  const { data: locations = [], isLoading } = useQuery({
-    queryKey: ["locations"],
-    queryFn: () => base44.entities.Location.list(),
-  });
+  const locations = WELSH_LOCATIONS;
 
   return (
     <div className="min-h-screen pt-24 sm:pt-28 pb-20 px-4">
@@ -31,27 +28,16 @@ export default function Locations() {
         </div>
 
         {/* Grid */}
-        {isLoading ? (
-          <div className="flex items-center justify-center py-32">
-            <Loader2 className="w-6 h-6 text-[#D4A843] animate-spin" />
-          </div>
-        ) : locations.length === 0 ? (
-          <div className="text-center py-32">
-            <MapPin className="w-12 h-12 text-white/10 mx-auto mb-4" />
-            <p className="text-white/30 text-sm">No locations added yet</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {locations.map((loc, idx) => (
-              <LocationCard
-                key={loc.id}
-                location={loc}
-                index={idx}
-                onSelect={setSelected}
-              />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {locations.map((loc, idx) => (
+            <LocationCard
+              key={loc.id}
+              location={loc}
+              index={idx}
+              onSelect={setSelected}
+            />
+          ))}
+        </div>
       </div>
 
       {/* 3D Viewer Modal */}

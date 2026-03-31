@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, QrCode, Printer, ExternalLink } from "lucide-react";

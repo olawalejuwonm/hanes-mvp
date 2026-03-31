@@ -1,23 +1,21 @@
+'use client';
+
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
 import { Loader2, Users, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import IconCard from "@/components/icons/IconCard";
+import { WELSH_ICONS } from "@/data/mockData";
 
 export default function WelshIcons() {
   const [search, setSearch] = useState("");
   const [eraFilter, setEraFilter] = useState("all");
 
-  const { data: icons = [], isLoading } = useQuery({
-    queryKey: ["welsh-icons"],
-    queryFn: () => base44.entities.WelshIcon.list(),
-  });
-
+  const icons = WELSH_ICONS;
   const eras = [...new Set(icons.map((i) => i.era).filter(Boolean))];
 
   const filtered = icons.filter((icon) => {
-    const matchesSearch = !search || 
+    const matchesSearch =
+      !search ||
       icon.name?.toLowerCase().includes(search.toLowerCase()) ||
       icon.title?.toLowerCase().includes(search.toLowerCase());
     const matchesEra = eraFilter === "all" || icon.era === eraFilter;
@@ -35,7 +33,9 @@ export default function WelshIcons() {
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold">Welsh Icons</h1>
-              <p className="text-white/40 text-sm mt-1">Choose your character and rewrite history</p>
+              <p className="text-white/40 text-sm mt-1">
+                Choose your character and rewrite history
+              </p>
             </div>
           </div>
         </div>
@@ -63,4 +63,35 @@ export default function WelshIcons() {
               All Eras
             </button>
             {eras.map((era) => (
- 
+              <button
+                key={era}
+                onClick={() => setEraFilter(era)}
+                className={`px-4 py-2 rounded-lg text-xs font-medium transition-all ${
+                  eraFilter === era
+                    ? "bg-[#D4A843]/10 text-[#D4A843] border border-[#D4A843]/20"
+                    : "bg-white/5 text-white/40 border border-white/5 hover:text-white/60"
+                }`}
+              >
+                {era}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Icons Grid */}
+        {filtered.length === 0 ? (
+          <div className="text-center py-32">
+            <Users className="w-12 h-12 text-white/10 mx-auto mb-4" />
+            <p className="text-white/30 text-sm">No icons found</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((icon, idx) => (
+              <IconCard key={icon.id} icon={icon} index={idx} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

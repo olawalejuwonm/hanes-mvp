@@ -1,35 +1,22 @@
+'use client';
+
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { base44 } from "@/api/base44Client";
-import { Link } from "react-router-dom";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Swords, Star, Loader2 } from "lucide-react";
+import { ArrowLeft, MapPin, Swords, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Scene3D from "@/components/viewer/Scene3D";
+import { WELSH_ICONS } from "@/data/mockData";
 
-const WARRIOR_IMG = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa29ac788b58b9c3b0ef60/7188b987a_generated_image.png";
+const WARRIOR_IMG =
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa29ac788b58b9c3b0ef60/7188b987a_generated_image.png";
 
 export default function IconDetail() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-
-  const { data: icon, isLoading } = useQuery({
-    queryKey: ["icon", id],
-    queryFn: async () => {
-      const icons = await base44.entities.WelshIcon.list();
-      return icons.find((i) => i.id === id);
-    },
-    enabled: !!id,
-  });
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-6 h-6 text-[#D4A843] animate-spin" />
-      </div>
-    );
-  }
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const icon = WELSH_ICONS.find((i) => i.id === id);
 
   if (!icon) {
     return (
@@ -37,7 +24,10 @@ export default function IconDetail() {
         <div className="text-center">
           <Swords className="w-12 h-12 text-white/10 mx-auto mb-4" />
           <p className="text-white/30">Icon not found</p>
-          <Link to={createPageUrl("WelshIcons")} className="text-[#D4A843] text-sm mt-4 inline-block">
+          <Link
+            href={createPageUrl("WelshIcons")}
+            className="text-[#D4A843] text-sm mt-4 inline-block"
+          >
             ← Back to Icons
           </Link>
         </div>
@@ -55,11 +45,11 @@ export default function IconDetail() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F13] via-[#0D0F13]/50 to-transparent" />
-        
+
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12">
           <div className="max-w-5xl mx-auto">
             <Link
-              to={createPageUrl("WelshIcons")}
+              href={createPageUrl("WelshIcons")}
               className="inline-flex items-center gap-2 text-white/40 hover:text-white/60 text-sm mb-6 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -89,7 +79,9 @@ export default function IconDetail() {
               Story
             </h2>
             <p className="text-white/40 leading-relaxed text-sm mb-8">
-              {icon.story_summary || icon.description || "The story of this legendary Welsh icon spans decades of struggle, triumph, and cultural transformation. Step into their shoes to experience the pivotal moments that defined their legacy."}
+              {icon.story_summary ||
+                icon.description ||
+                "The story of this legendary Welsh icon spans decades of struggle, triumph, and cultural transformation."}
             </p>
 
             {icon.location_name && (
@@ -112,13 +104,15 @@ export default function IconDetail() {
                       className={`w-8 h-2 rounded-full ${
                         (icon.difficulty === "beginner" && level <= 1) ||
                         (icon.difficulty === "intermediate" && level <= 2) ||
-                        (icon.difficulty === "advanced")
+                        icon.difficulty === "advanced"
                           ? "bg-[#D4A843]"
                           : "bg-white/10"
                       }`}
                     />
                   ))}
-                  <span className="text-white/50 text-sm ml-2 capitalize">{icon.difficulty}</span>
+                  <span className="text-white/50 text-sm ml-2 capitalize">
+                    {icon.difficulty}
+                  </span>
                 </div>
               </div>
             )}
