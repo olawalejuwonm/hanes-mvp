@@ -1,42 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
+'use client';
+
+import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
 import { Play, QrCode, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HERO_BG = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa29ac788b58b9c3b0ef60/cb5aaae96_generated_image.png";
 
+// Deterministic particles so server & client agree
+const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
+  left: ((i * 37 + 13) % 100).toFixed(1),
+  top: ((i * 53 + 7) % 100).toFixed(1),
+  duration: 3 + (i % 4),
+  delay: (i * 0.3) % 3,
+}));
+
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
           src={HERO_BG}
-          alt="Welsh landscape"
+          alt={t.common.welshLandscape}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0F13]/60 via-[#0D0F13]/40 to-[#0D0F13]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
       </div>
 
       {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+      {PARTICLES.map((p, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-[#C8102E] rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.8, 0.2],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 4,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
+          className="absolute w-1 h-1 rounded-full"
+          style={{ left: `${p.left}%`, top: `${p.top}%`, background: "var(--hanes-red)" }}
+          animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
+          transition={{ duration: p.duration, repeat: Infinity, delay: p.delay }}
         />
       ))}
 
@@ -47,10 +49,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8">
-            <div className="w-2 h-2 rounded-full bg-[#C8102E] animate-pulse" />
-            <span className="text-xs sm:text-sm text-white/70 tracking-widest uppercase">
-              Pan Wales Hackathon 2026
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--hanes-red)" }} />
+            <span className="text-xs sm:text-sm text-white/80 tracking-widest uppercase">
+              {t.hero.badge}
             </span>
           </div>
         </motion.div>
@@ -61,27 +63,25 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-6"
         >
-          <span className="text-[#C8102E] glow-text">HANES</span>
+          <span className="glow-text" style={{ color: "var(--hanes-red)" }}>HANES</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg sm:text-xl lg:text-2xl text-white/50 font-light mb-4 tracking-wide"
+          className="text-lg sm:text-xl lg:text-2xl text-white/70 font-light mb-4 tracking-wide"
         >
-          Welsh Heritage Through Augmented Reality
+          {t.hero.subtitle}
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="text-sm sm:text-base text-white/30 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-sm sm:text-base text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Step into the shoes of legendary Welsh icons. Explore castles, battlefields, 
-          and sacred sites through immersive AR. Scan QR cards to unlock 3D locations 
-          and experience centuries of Welsh culture like never before.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -91,18 +91,19 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            to={createPageUrl("WelshIcons")}
-            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#C8102E] to-[#8B0A1E] rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
+            href={createPageUrl("WelshIcons")}
+            className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
+            style={{ background: "linear-gradient(to right, var(--hanes-red), var(--hanes-red-dark))" }}
           >
             <Play className="w-4 h-4" />
-            Begin Your Journey
+            {t.hero.beginJourney}
           </Link>
           <Link
-            to={createPageUrl("QRCards")}
-            className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white/80 font-medium text-sm tracking-wide hover:bg-white/10 transition-all duration-300"
+            href={createPageUrl("QRCards")}
+            className="flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 rounded-xl text-white/90 font-medium text-sm tracking-wide hover:bg-white/20 transition-all duration-300"
           >
             <QrCode className="w-4 h-4" />
-            Explore QR Cards
+            {t.hero.exploreQR}
           </Link>
         </motion.div>
       </div>
@@ -113,7 +114,7 @@ export default function HeroSection() {
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown className="w-5 h-5 text-white/30" />
+        <ChevronDown className="w-5 h-5 text-white/40" />
       </motion.div>
     </section>
   );
