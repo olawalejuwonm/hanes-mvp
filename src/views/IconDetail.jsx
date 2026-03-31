@@ -7,7 +7,6 @@ import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Swords, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import Scene3D from "@/components/viewer/Scene3D";
 import { WELSH_ICONS } from "@/data/mockData";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -24,6 +23,7 @@ export default function IconDetail() {
       (lang === "cy" ? (icon.description_cy || icon.description) : icon.description) ||
       t.iconDetail.defaultStory)
     : t.iconDetail.defaultStory;
+  const locationImage = icon?.location_image_url || icon?.image_url || WARRIOR_IMG;
 
   if (!icon) {
     return (
@@ -156,7 +156,11 @@ export default function IconDetail() {
               className="aspect-square rounded-2xl overflow-hidden"
               style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
             >
-              <Scene3D type="castle" />
+              <img
+                src={locationImage}
+                alt={icon.location_name || icon.name}
+                className="w-full h-full object-cover"
+              />
             </div>
             <p className="text-xs mt-3 text-center" style={{ color: "var(--app-text-subtle)" }}>
               {t.iconDetail.rotateHint}

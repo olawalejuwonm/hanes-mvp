@@ -7,7 +7,7 @@ const translations = {
       switchToDark: "Switch to dark mode",
       welshLandscape: "Welsh landscape",
       playStory: "Play story",
-      view3D: "View 3D",
+      view3D: "View photo",
       unknownEra: "Unknown Era",
       welshHeritageAR: "Welsh Heritage AR",
       scanToNavigateToRealLocation: "Scan to navigate to the real location in Wales",
@@ -113,7 +113,7 @@ const translations = {
       keyLocation: "Key Location",
       difficulty: "Difficulty",
       locationPreview: "Location Preview",
-      rotateHint: "Interactive 3D preview • Rotate to explore",
+      rotateHint: "Location photo preview",
       notFound: "Icon not found",
       defaultStory:
         "The story of this legendary Welsh icon spans decades of struggle, triumph, and cultural transformation.",
@@ -126,7 +126,7 @@ const translations = {
     // Locations Page
     locations: {
       heading: "Welsh Locations",
-      subheading: "Explore heritage sites in immersive 3D",
+      subheading: "Explore heritage sites with real photography",
       noLocations: "No locations added yet",
     },
     // QR Cards Page
@@ -173,7 +173,7 @@ const translations = {
       switchToDark: "Newid i fod yn dywyll",
       welshLandscape: "Tirlun Cymreig",
       playStory: "Chwarae stori",
-      view3D: "Gweld 3D",
+      view3D: "Gweld llun",
       unknownEra: "Cyfnod Anhysbys",
       welshHeritageAR: "Treftadaeth Cymru AR",
       scanToNavigateToRealLocation: "Sganiwch i lywio i'r lleoliad gwirioneddol yng Nghymru",
@@ -280,7 +280,7 @@ const translations = {
       keyLocation: "Lleoliad Allweddol",
       difficulty: "Anhawster",
       locationPreview: "Rhagolwg Lleoliad",
-      rotateHint: "Rhagolwg 3D rhyngweithiol • Cylchdroi i archwilio",
+      rotateHint: "Rhagolwg llun y lleoliad",
       notFound: "Enwog heb ei gael",
       defaultStory:
         "Mae stori'r enwogyn Cymreig chwedlonol hwn yn ymestyn dros ddegawdau o frwydr, buddugoliaeth, a thrawsnewid diwylliannol.",
@@ -293,7 +293,7 @@ const translations = {
     // Locations Page
     locations: {
       heading: "Lleoliadau Cymru",
-      subheading: "Archwiliwch safleoedd treftadaeth mewn 3D trochi",
+      subheading: "Archwiliwch safleoedd treftadaeth gyda lluniau go iawn",
       noLocations: "Dim lleoliadau wedi'u hychwanegu eto",
     },
     // QR Cards Page

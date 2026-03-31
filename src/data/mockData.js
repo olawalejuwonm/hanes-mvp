@@ -1,3 +1,8 @@
+const DEFAULT_ICON_IMAGE =
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa29ac788b58b9c3b0ef60/7188b987a_generated_image.png";
+const DEFAULT_LOCATION_IMAGE =
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aa29ac788b58b9c3b0ef60/cb5aaae96_generated_image.png";
+
 export const WELSH_ICONS = [
   {
     id: "1",
@@ -19,7 +24,8 @@ export const WELSH_ICONS = [
     location_name: "Aberffraw, Anglesey",
     location_name_cy: "Aberffraw, Ynys Môn",
     source_url: "https://en.wikipedia.org/wiki/Llywelyn_the_Great",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
   {
     id: "2",
@@ -41,7 +47,8 @@ export const WELSH_ICONS = [
     location_name: "Sycharth, Powys",
     location_name_cy: "Sycharth, Powys",
     source_url: "https://en.wikipedia.org/wiki/Owain_Glynd%C5%B5r",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
   {
     id: "3",
@@ -63,7 +70,8 @@ export const WELSH_ICONS = [
     location_name: "Camulodunum (Colchester)",
     location_name_cy: "Camulodunum (Colchester)",
     source_url: "https://en.wikipedia.org/wiki/Boudica",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
   {
     id: "4",
@@ -85,7 +93,8 @@ export const WELSH_ICONS = [
     location_name: "Pembroke Castle",
     location_name_cy: "Castell Penfro",
     source_url: "https://en.wikipedia.org/wiki/Henry_VII_of_England",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
   {
     id: "5",
@@ -107,7 +116,8 @@ export const WELSH_ICONS = [
     location_name: "Tredegar, Blaenau Gwent",
     location_name_cy: "Tredegar, Blaenau Gwent",
     source_url: "https://en.wikipedia.org/wiki/Aneurin_Bevan",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
   {
     id: "6",
@@ -129,7 +139,8 @@ export const WELSH_ICONS = [
     location_name: "Llanover, Monmouthshire",
     location_name_cy: "Llan-ffwyst, Sir Fynwy",
     source_url: "https://en.wikipedia.org/wiki/Augusta_Hall,_Baroness_Llanover",
-    image_url: null,
+    image_url: DEFAULT_ICON_IMAGE,
+    location_image_url: DEFAULT_LOCATION_IMAGE,
   },
 ];
 
@@ -144,7 +155,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Wedi'i adeiladu gan Edward I ar ôl concwest Cymru, mae Castell Caernarfon yn un o'r caerau mwyaf trawiadol a adeiladwyd erioed. Bu'n gwasanaethu fel prifddinas weinyddol rheolaeth Lloegr yng Nghymru.",
     ar_model_type: "castle",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 53.1388,
     longitude: -4.277,
     source_url: "https://en.wikipedia.org/wiki/Caernarfon_Castle",
@@ -160,7 +171,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Wedi'i sefydlu ym 1131 gan fynachod Sistersaidd, saif Abaty Tyndyrn yn Nyffryn hardd Gwy. Ysbrydolodd ei adfeilion rhamantaidd feirdd ac artistiaid gan gynnwys Wordsworth a Turner.",
     ar_model_type: "abbey",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 51.6978,
     longitude: -2.6757,
     source_url: "https://en.wikipedia.org/wiki/Tintern_Abbey",
@@ -176,7 +187,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Wedi'i osod yn ddramatig ar allwthiad creigiog uwch Bae Ceredigion, roedd Castell Harlech yn un o gylch haearn cestyll Edward I a adeiladwyd i ddarostwng y Cymry.",
     ar_model_type: "castle",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 52.8601,
     longitude: -4.104,
     source_url: "https://en.wikipedia.org/wiki/Harlech_Castle",
@@ -192,7 +203,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Fel copa uchaf Cymru, mae Eryri (Yr Wyddfa) wedi bod yn safle sanctaidd ers amseroedd Celtaidd. Dywed y chwedl mai dyma fan claddu'r cawr Rhitta Gawr.",
     ar_model_type: "landscape",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 53.0685,
     longitude: -4.0763,
     source_url: "https://en.wikipedia.org/wiki/Yr_Wyddfa",
@@ -208,7 +219,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Yn cael ei ystyried yn gastell fwyaf perffaith yn dechnegol ym Mhrydain, Biwmares oedd yr olaf a'r mwyaf o gestyll Edward I yng Nghymru, er na chafodd ei gwblhau'n llawn erioed.",
     ar_model_type: "castle",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 53.2638,
     longitude: -4.0889,
     source_url: "https://en.wikipedia.org/wiki/Beaumaris_Castle",
@@ -224,7 +235,7 @@ export const WELSH_LOCATIONS = [
     description_cy:
       "Yn siambr gladdu Neolithig odidog sy'n dyddio'n ôl dros 5,000 o flynyddoedd, mae Pentre Ifan yn un o'r henebion megalithig mwyaf trawiadol yng Nghymru.",
     ar_model_type: "monument",
-    image_url: null,
+    image_url: DEFAULT_LOCATION_IMAGE,
     latitude: 52.0127,
     longitude: -4.7714,
     source_url: "https://en.wikipedia.org/wiki/Pentre_Ifan",

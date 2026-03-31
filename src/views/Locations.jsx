@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { MapPin, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationCard from "@/components/locations/LocationCard";
-import Scene3D from "@/components/viewer/Scene3D";
 import { WELSH_LOCATIONS } from "@/data/mockData";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -82,8 +81,18 @@ export default function Locations() {
                   <X className="w-5 h-5" style={{ color: "var(--app-text-muted)" }} />
                 </button>
               </div>
-              <div className="aspect-video">
-                <Scene3D type={selected.ar_model_type || "castle"} />
+              <div className="aspect-video relative overflow-hidden" style={{ background: "var(--app-surface)" }}>
+                {selected.image_url ? (
+                  <img
+                    src={selected.image_url}
+                    alt={selected.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <MapPin className="w-12 h-12" style={{ color: "var(--app-text-subtle)" }} />
+                  </div>
+                )}
               </div>
               <div className="p-5" style={{ borderTop: "1px solid var(--app-border)" }}>
                 <p className="text-sm" style={{ color: "var(--app-text-muted)" }}>
