@@ -13,6 +13,14 @@ const ERA_YEARS = {
   industrial: "1760 – 1900",
   modern: "1900 – Present",
 };
+const ERA_YEARS_CY = {
+  celtic: "500 CC – 43 OC",
+  roman: "43 – 410 OC",
+  medieval: "1000 – 1400",
+  tudor: "1485 – 1603",
+  industrial: "1760 – 1900",
+  modern: "1900 – Presennol",
+};
 
 const ERA_ICONS = {
   celtic: ["Boudicca", "Caratacus"],
@@ -46,11 +54,12 @@ export default function Timeline() {
   const { t, lang } = useLanguage();
 
   const descriptions = lang === 'cy' ? ERA_DESCRIPTIONS_CY : ERA_DESCRIPTIONS_EN;
+  const yearsByLang = lang === 'cy' ? ERA_YEARS_CY : ERA_YEARS;
 
   const ERAS = Object.keys(ERA_YEARS).map((id) => ({
     id,
     name: t.eras.names[id],
-    years: ERA_YEARS[id],
+    years: yearsByLang[id],
     description: descriptions[id],
     icons: ERA_ICONS[id],
   }));
@@ -64,7 +73,7 @@ export default function Timeline() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
           >
-            <Clock className="w-4 h-4 text-[#D4A843]" />
+            <Clock className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
             <span className="text-xs tracking-widest uppercase" style={{ color: "var(--app-text-muted)" }}>
               {t.timeline.tag}
             </span>
@@ -72,7 +81,7 @@ export default function Timeline() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--app-text)" }}>
             {t.timeline.heading.split(" ").map((word, i, arr) =>
               i === arr.length - 1 || i === arr.length - 2 ? (
-                <span key={i} className="text-[#D4A843]">{word} </span>
+                <span key={i} style={{ color: "var(--hanes-gold)" }}>{word} </span>
               ) : (
                 <span key={i}>{word} </span>
               )

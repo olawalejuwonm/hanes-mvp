@@ -19,13 +19,13 @@ export default function QRCards() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
           >
-            <QrCode className="w-4 h-4 text-[#D4A843]" />
+            <QrCode className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
             <span className="text-xs tracking-widest uppercase" style={{ color: "var(--app-text-muted)" }}>
               {t.qrCards.tag}
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--app-text)" }}>
-            QR <span className="text-[#D4A843]">{t.qrCards.heading.replace("QR ", "")}</span>
+            <span style={{ color: "var(--hanes-gold)" }}>{t.qrCards.heading}</span>
           </h1>
           <p className="max-w-xl mx-auto text-sm sm:text-base" style={{ color: "var(--app-text-muted)" }}>
             {t.qrCards.subheading}
@@ -40,7 +40,7 @@ export default function QRCards() {
               className="p-6 rounded-2xl text-center"
               style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
             >
-              <span className="text-[#D4A843] text-2xl font-black">{item.step}</span>
+              <span className="text-2xl font-black" style={{ color: "var(--hanes-gold)" }}>{item.step}</span>
               <h3 className="text-sm font-semibold mt-3 mb-2" style={{ color: "var(--app-text)" }}>
                 {item.title}
               </h3>

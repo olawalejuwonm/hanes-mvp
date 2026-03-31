@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function QRCardDisplay({ location, index }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const hasCoords = location.latitude && location.longitude;
 
   const mapsUrl = location.qr_code_id?.startsWith("http")
     ? location.qr_code_id
     : hasCoords
     ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${location.latitude},${location.longitude}`
-    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + " Wales")}`;
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + " " + t.common.countryName)}`;
 
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(mapsUrl)}&bgcolor=0D0F13&color=D4A843`;
 
@@ -42,17 +42,17 @@ export default function QRCardDisplay({ location, index }) {
           <div class="card">
             <div class="card-header">
               <h1>HANES</h1>
-              <p>Welsh Heritage AR</p>
+              <p>${t.common.welshHeritageAR}</p>
             </div>
             <div class="card-body">
               <h2>${location.name}</h2>
-              <div class="era">${location.era || "Wales"}</div>
+              <div class="era">${lang === "cy" ? (location.era_cy || location.era || t.common.countryName) : (location.era || t.common.countryName)}</div>
               <img src="${qrUrl}" width="180" height="180" />
             </div>
             <div class="card-footer">
-              Scan to navigate to the real location in Wales
+              ${t.common.scanToNavigateToRealLocation}
               ${hasCoords ? `<br/>${location.latitude.toFixed(4)}° N, ${Math.abs(location.longitude).toFixed(4)}° W` : ""}
-              <br/>Pan Wales Hackathon 2026
+              <br/>${t.hero.badge}
             </div>
           </div>
         </body>
@@ -88,8 +88,8 @@ export default function QRCardDisplay({ location, index }) {
         }}
       >
         <div className="flex items-center gap-2">
-          <QrCode className="w-4 h-4 text-[#D4A843]" />
-          <span className="text-[10px] text-[#D4A843] tracking-[0.2em] uppercase font-medium">
+          <QrCode className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
+          <span className="text-[10px] tracking-[0.2em] uppercase font-medium" style={{ color: "var(--hanes-gold)" }}>
             {t.qrCards.hanesCard}
           </span>
         </div>
@@ -102,13 +102,13 @@ export default function QRCardDisplay({ location, index }) {
         </h3>
         {location.era && (
           <p className="text-[10px] tracking-widest uppercase mb-6" style={{ color: "var(--app-text-subtle)" }}>
-            {location.era}
+            {lang === "cy" ? (location.era_cy || location.era) : location.era}
           </p>
         )}
 
         <div
           className="w-48 h-48 rounded-xl overflow-hidden p-3 mb-6"
-          style={{ background: "#0A0C0F", border: "1px solid var(--app-border)" }}
+          style={{ background: "var(--app-bg)", border: "1px solid var(--app-border)" }}
         >
           <img
             src={qrUrl}
@@ -119,13 +119,13 @@ export default function QRCardDisplay({ location, index }) {
 
         {location.description && (
           <p className="text-xs text-center line-clamp-2 mb-6" style={{ color: "var(--app-text-subtle)" }}>
-            {location.description}
+            {lang === "cy" ? (location.description_cy || location.description) : location.description}
           </p>
         )}
 
         {hasCoords && (
           <div className="flex items-center gap-1.5 text-[10px] mb-5" style={{ color: "var(--app-text-subtle)" }}>
-            <MapPin className="w-3 h-3 text-[#D4A843]/40" />
+            <MapPin className="w-3 h-3" style={{ color: "rgba(212,168,67,0.40)" }} />
             <span>{location.latitude.toFixed(4)}° N, {Math.abs(location.longitude).toFixed(4)}° W</span>
           </div>
         )}

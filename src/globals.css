@@ -8,6 +8,7 @@
 :root {
   /* Welsh brand colors - same in both themes */
   --hanes-red: #C8102E;
+  --hanes-red-dark: #8B0A1E;
   --hanes-green: #00703C;
   --hanes-gold: #D4A843;
 
@@ -109,11 +110,11 @@
   background: var(--app-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8102E;
+  background: var(--hanes-red);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B0A1E;
+  background: var(--hanes-red-dark);
 }
 
 /* Glow text effect */

@@ -1,5 +1,21 @@
 const translations = {
   en: {
+    common: {
+      switchToWelsh: "Switch to Welsh / Newid i Gymraeg",
+      switchToEnglish: "Switch to English / Newid i Saesneg",
+      switchToLight: "Switch to light mode",
+      switchToDark: "Switch to dark mode",
+      welshLandscape: "Welsh landscape",
+      playStory: "Play story",
+      view3D: "View 3D",
+      unknownEra: "Unknown Era",
+      welshHeritageAR: "Welsh Heritage AR",
+      scanToNavigateToRealLocation: "Scan to navigate to the real location in Wales",
+      accessDenied: "Access Denied",
+      notRegistered: "You are not registered for this application.",
+      goHome: "Go Home",
+      countryName: "Wales",
+    },
     // Nav
     nav: {
       home: "Home",
@@ -97,6 +113,8 @@ const translations = {
       locationPreview: "Location Preview",
       rotateHint: "Interactive 3D preview • Rotate to explore",
       notFound: "Icon not found",
+      defaultStory:
+        "The story of this legendary Welsh icon spans decades of struggle, triumph, and cultural transformation.",
       difficulties: {
         beginner: "Beginner",
         intermediate: "Intermediate",
@@ -146,6 +164,22 @@ const translations = {
     },
   },
   cy: {
+    common: {
+      switchToWelsh: "Newid i Gymraeg",
+      switchToEnglish: "Newid i Saesneg",
+      switchToLight: "Newid i olau",
+      switchToDark: "Newid i fod yn dywyll",
+      welshLandscape: "Tirlun Cymreig",
+      playStory: "Chwarae stori",
+      view3D: "Gweld 3D",
+      unknownEra: "Cyfnod Anhysbys",
+      welshHeritageAR: "Treftadaeth Cymru AR",
+      scanToNavigateToRealLocation: "Sganiwch i lywio i'r lleoliad gwirioneddol yng Nghymru",
+      accessDenied: "Mynediad wedi'i wrthod",
+      notRegistered: "Nid ydych wedi cofrestru ar gyfer y rhaglen hon.",
+      goHome: "Mynd adref",
+      countryName: "Cymru",
+    },
     // Nav
     nav: {
       home: "Hafan",
@@ -244,6 +278,8 @@ const translations = {
       locationPreview: "Rhagolwg Lleoliad",
       rotateHint: "Rhagolwg 3D rhyngweithiol • Cylchdroi i archwilio",
       notFound: "Enwog heb ei gael",
+      defaultStory:
+        "Mae stori'r enwogyn Cymreig chwedlonol hwn yn ymestyn dros ddegawdau o frwydr, buddugoliaeth, a thrawsnewid diwylliannol.",
       difficulties: {
         beginner: "Dechreuwyr",
         intermediate: "Canolradd",

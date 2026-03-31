@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function Locations() {
   const [selected, setSelected] = useState(null);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const locations = WELSH_LOCATIONS;
 
   return (
@@ -20,7 +20,7 @@ export default function Locations() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,168,67,0.10)" }}>
-              <MapPin className="w-5 h-5 text-[#D4A843]" />
+              <MapPin className="w-5 h-5" style={{ color: "var(--hanes-gold)" }} />
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--app-text)" }}>
@@ -70,7 +70,9 @@ export default function Locations() {
                   <h3 className="text-lg font-semibold" style={{ color: "var(--app-text)" }}>
                     {selected.name}
                   </h3>
-                  <p className="text-xs" style={{ color: "var(--app-text-subtle)" }}>{selected.era}</p>
+                  <p className="text-xs" style={{ color: "var(--app-text-subtle)" }}>
+                    {lang === "cy" ? (selected.era_cy || selected.era) : selected.era}
+                  </p>
                 </div>
                 <button
                   onClick={() => setSelected(null)}
@@ -84,7 +86,9 @@ export default function Locations() {
                 <Scene3D type={selected.ar_model_type || "castle"} />
               </div>
               <div className="p-5" style={{ borderTop: "1px solid var(--app-border)" }}>
-                <p className="text-sm" style={{ color: "var(--app-text-muted)" }}>{selected.description}</p>
+                <p className="text-sm" style={{ color: "var(--app-text-muted)" }}>
+                  {lang === "cy" ? (selected.description_cy || selected.description) : selected.description}
+                </p>
               </div>
             </motion.div>
           </motion.div>

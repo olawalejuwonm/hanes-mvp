@@ -11,10 +11,15 @@ const PAGE_NAME_MAP = {
   '/': 'Home',
   '/Home': 'Home',
   '/WelshIcons': 'WelshIcons',
+  '/welshicons': 'WelshIcons',
   '/IconDetail': 'IconDetail',
+  '/icondetail': 'IconDetail',
   '/Locations': 'Locations',
+  '/locations': 'Locations',
   '/QRCards': 'QRCards',
+  '/qrcards': 'QRCards',
   '/Timeline': 'Timeline',
+  '/timeline': 'Timeline',
 };
 
 export default function Providers({ children }) {

@@ -44,11 +44,11 @@ export default function Layout({ children, currentPageName }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <Link href={createPageUrl("Home")} className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#8B0A1E] flex items-center justify-center">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(to bottom right, var(--hanes-red), var(--hanes-red-dark))" }}>
                 <span className="text-white font-black text-sm">H</span>
               </div>
               <span className="text-xl font-bold tracking-wider">
-                <span className="text-[#C8102E]">HANES</span>
+                <span style={{ color: "var(--hanes-red)" }}>HANES</span>
               </span>
             </Link>
 
@@ -60,7 +60,7 @@ export default function Layout({ children, currentPageName }) {
                   href={createPageUrl(item.page)}
                   className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
                   style={{
-                    color: currentPageName === item.page ? "#C8102E" : "var(--app-text-muted)",
+                    color: currentPageName === item.page ? "var(--hanes-red)" : "var(--app-text-muted)",
                     background: currentPageName === item.page ? "rgba(200,16,46,0.10)" : "transparent",
                   }}
                 >
@@ -77,10 +77,10 @@ export default function Layout({ children, currentPageName }) {
                 className="px-3 py-1.5 rounded-lg text-xs font-bold border transition-all duration-300"
                 style={{
                   borderColor: "var(--app-border)",
-                  color: lang === "cy" ? "#C8102E" : "var(--app-text-muted)",
+                  color: lang === "cy" ? "var(--hanes-red)" : "var(--app-text-muted)",
                   background: lang === "cy" ? "rgba(200,16,46,0.08)" : "var(--app-surface)",
                 }}
-                title={lang === "en" ? "Switch to Welsh / Newid i Gymraeg" : "Switch to English / Newid i Saesneg"}
+                title={lang === "en" ? t.common.switchToWelsh : t.common.switchToEnglish}
               >
                 {lang === "en" ? "CY" : "EN"}
               </button>
@@ -91,10 +91,10 @@ export default function Layout({ children, currentPageName }) {
                   onClick={() => setTheme(isDark ? "light" : "dark")}
                   className="p-2 rounded-lg border transition-all duration-300"
                   style={{ borderColor: "var(--app-border)", background: "var(--app-surface)" }}
-                  title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  title={isDark ? t.common.switchToLight : t.common.switchToDark}
                 >
                   {isDark ? (
-                    <Sun className="w-4 h-4 text-[#D4A843]" />
+                    <Sun className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
                   ) : (
                     <Moon className="w-4 h-4" style={{ color: "var(--app-text-muted)" }} />
                   )}
@@ -137,7 +137,7 @@ export default function Layout({ children, currentPageName }) {
                       onClick={() => setMenuOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300"
                       style={{
-                        color: currentPageName === item.page ? "#C8102E" : "var(--app-text-muted)",
+                        color: currentPageName === item.page ? "var(--hanes-red)" : "var(--app-text-muted)",
                         background: currentPageName === item.page ? "rgba(200,16,46,0.10)" : "transparent",
                       }}
                     >

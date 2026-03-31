@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={HERO_BG}
-          alt="Welsh landscape"
+          alt={t.common.welshLandscape}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
@@ -35,8 +35,8 @@ export default function HeroSection() {
       {PARTICLES.map((p, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-[#C8102E] rounded-full"
-          style={{ left: `${p.left}%`, top: `${p.top}%` }}
+          className="absolute w-1 h-1 rounded-full"
+          style={{ left: `${p.left}%`, top: `${p.top}%`, background: "var(--hanes-red)" }}
           animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
           transition={{ duration: p.duration, repeat: Infinity, delay: p.delay }}
         />
@@ -50,7 +50,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-            <div className="w-2 h-2 rounded-full bg-[#C8102E] animate-pulse" />
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--hanes-red)" }} />
             <span className="text-xs sm:text-sm text-white/80 tracking-widest uppercase">
               {t.hero.badge}
             </span>
@@ -63,7 +63,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.4 }}
           className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-6"
         >
-          <span className="text-[#C8102E] glow-text">HANES</span>
+          <span className="glow-text" style={{ color: "var(--hanes-red)" }}>HANES</span>
         </motion.h1>
 
         <motion.p
@@ -92,7 +92,8 @@ export default function HeroSection() {
         >
           <Link
             href={createPageUrl("WelshIcons")}
-            className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#C8102E] to-[#8B0A1E] rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
+            className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
+            style={{ background: "linear-gradient(to right, var(--hanes-red), var(--hanes-red-dark))" }}
           >
             <Play className="w-4 h-4" />
             {t.hero.beginJourney}

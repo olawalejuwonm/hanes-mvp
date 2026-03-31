@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Eye } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/context/LanguageContext";
 
 const typeColors = {
   castle: "bg-[#D4A843]/10 text-[#D4A843] border-[#D4A843]/20",
@@ -14,6 +15,8 @@ const typeColors = {
 };
 
 export default function LocationCard({ location, index, onSelect }) {
+  const { t, lang } = useLanguage();
+
   return (
     <motion.button
       initial={{ opacity: 0, y: 20 }}
@@ -62,25 +65,25 @@ export default function LocationCard({ location, index, onSelect }) {
             style={{ color: "var(--app-text-muted)" }}
           >
             <Eye className="w-3 h-3" />
-            View 3D
+            {t.common.view3D}
           </div>
         </div>
       </div>
 
       <div className="p-5">
         <h3
-          className="text-base font-semibold group-hover:text-[#D4A843] transition-colors mb-1"
+          className="text-base font-semibold transition-colors mb-1"
           style={{ color: "var(--app-text)" }}
         >
           {location.name}
         </h3>
         {location.era && (
           <p className="text-[10px] tracking-widest uppercase mb-2" style={{ color: "var(--app-text-subtle)" }}>
-            {location.era}
+            {lang === "cy" ? (location.era_cy || location.era) : location.era}
           </p>
         )}
         <p className="text-xs line-clamp-2 leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
-          {location.description}
+          {lang === "cy" ? (location.description_cy || location.description) : location.description}
         </p>
       </div>
     </motion.button>

@@ -18,7 +18,12 @@ export default function IconDetail() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const icon = WELSH_ICONS.find((i) => i.id === id);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const iconStory = icon
+    ? ((lang === "cy" ? (icon.story_summary_cy || icon.story_summary) : icon.story_summary) ||
+      (lang === "cy" ? (icon.description_cy || icon.description) : icon.description) ||
+      t.iconDetail.defaultStory)
+    : t.iconDetail.defaultStory;
 
   if (!icon) {
     return (
@@ -28,7 +33,8 @@ export default function IconDetail() {
           <p style={{ color: "var(--app-text-muted)" }}>{t.iconDetail.notFound}</p>
           <Link
             href={createPageUrl("WelshIcons")}
-            className="text-[#D4A843] text-sm mt-4 inline-block"
+            className="text-sm mt-4 inline-block"
+            style={{ color: "var(--hanes-gold)" }}
           >
             ← {t.iconDetail.backToIcons}
           </Link>
@@ -59,13 +65,13 @@ export default function IconDetail() {
             </Link>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex items-center gap-3 mb-3">
-                <Badge className="bg-[#D4A843]/10 text-[#D4A843] border-[#D4A843]/20 text-[10px] tracking-widest uppercase">
-                  {icon.era}
+                <Badge className="text-[10px] tracking-widest uppercase" style={{ background: "rgba(212,168,67,0.10)", color: "var(--hanes-gold)", border: "1px solid rgba(212,168,67,0.20)" }}>
+                  {lang === "cy" ? (icon.era_cy || icon.era) : icon.era}
                 </Badge>
                 <span className="text-white/30 text-xs">{icon.era_years}</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-2 text-white">{icon.name}</h1>
-              <p className="text-white/60 text-lg">{icon.title}</p>
+              <p className="text-white/60 text-lg">{lang === "cy" ? (icon.title_cy || icon.title) : icon.title}</p>
             </motion.div>
           </div>
         </div>
@@ -77,13 +83,11 @@ export default function IconDetail() {
           {/* Story */}
           <div>
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2" style={{ color: "var(--app-text)" }}>
-              <Star className="w-4 h-4 text-[#D4A843]" />
+              <Star className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
               {t.iconDetail.story}
             </h2>
             <p className="leading-relaxed text-sm mb-8" style={{ color: "var(--app-text-muted)" }}>
-              {icon.story_summary ||
-                icon.description ||
-                "The story of this legendary Welsh icon spans decades of struggle, triumph, and cultural transformation."}
+              {iconStory}
             </p>
 
             {icon.location_name && (
@@ -91,11 +95,13 @@ export default function IconDetail() {
                 className="p-5 rounded-xl"
                 style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
               >
-                <div className="flex items-center gap-2 text-[#D4A843] text-xs tracking-widest uppercase mb-2">
+                <div className="flex items-center gap-2 text-xs tracking-widest uppercase mb-2" style={{ color: "var(--hanes-gold)" }}>
                   <MapPin className="w-3 h-3" />
                   {t.iconDetail.keyLocation}
                 </div>
-                <p className="font-medium" style={{ color: "var(--app-text)" }}>{icon.location_name}</p>
+                <p className="font-medium" style={{ color: "var(--app-text)" }}>
+                  {lang === "cy" ? (icon.location_name_cy || icon.location_name) : icon.location_name}
+                </p>
               </div>
             )}
 
@@ -117,7 +123,7 @@ export default function IconDetail() {
                           (icon.difficulty === "beginner" && level <= 1) ||
                           (icon.difficulty === "intermediate" && level <= 2) ||
                           icon.difficulty === "advanced"
-                            ? "#D4A843"
+                            ? "var(--hanes-gold)"
                             : "var(--app-border)",
                       }}
                     />

@@ -20,7 +20,7 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <span className="text-[#D4A843] text-xs tracking-[0.3em] uppercase font-medium">
+          <span className="text-xs tracking-[0.3em] uppercase font-medium" style={{ color: "var(--hanes-gold)" }}>
             {t.features.tag}
           </span>
           <h2

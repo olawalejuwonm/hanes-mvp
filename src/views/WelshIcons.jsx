@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function WelshIcons() {
   const [search, setSearch] = useState("");
   const [eraFilter, setEraFilter] = useState("all");
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const icons = WELSH_ICONS;
   const eras = [...new Set(icons.map((i) => i.era).filter(Boolean))];
@@ -31,7 +31,7 @@ export default function WelshIcons() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,168,67,0.10)" }}>
-              <Users className="w-5 h-5 text-[#D4A843]" />
+              <Users className="w-5 h-5" style={{ color: "var(--hanes-gold)" }} />
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--app-text)" }}>
@@ -66,7 +66,7 @@ export default function WelshIcons() {
               className="px-4 py-2 rounded-lg text-xs font-medium transition-all"
               style={
                 eraFilter === "all"
-                  ? { background: "rgba(212,168,67,0.10)", color: "#D4A843", border: "1px solid rgba(212,168,67,0.20)" }
+                  ? { background: "rgba(212,168,67,0.10)", color: "var(--hanes-gold)", border: "1px solid rgba(212,168,67,0.20)" }
                   : { background: "var(--app-surface)", color: "var(--app-text-muted)", border: "1px solid var(--app-border)" }
               }
             >
@@ -79,11 +79,11 @@ export default function WelshIcons() {
                 className="px-4 py-2 rounded-lg text-xs font-medium transition-all"
                 style={
                   eraFilter === era
-                    ? { background: "rgba(212,168,67,0.10)", color: "#D4A843", border: "1px solid rgba(212,168,67,0.20)" }
+                    ? { background: "rgba(212,168,67,0.10)", color: "var(--hanes-gold)", border: "1px solid rgba(212,168,67,0.20)" }
                     : { background: "var(--app-surface)", color: "var(--app-text-muted)", border: "1px solid var(--app-border)" }
                 }
               >
-                {era}
+                {lang === "cy" ? (icons.find((i) => i.era === era)?.era_cy || era) : era}
               </button>
             ))}
           </div>
