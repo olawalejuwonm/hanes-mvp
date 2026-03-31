@@ -1,8 +1,8 @@
 const translations = {
   en: {
     common: {
-      switchToWelsh: "Switch to Welsh / Newid i Gymraeg",
-      switchToEnglish: "Switch to English / Newid i Saesneg",
+      switchToWelsh: "Switch to Welsh",
+      switchToEnglish: "Switch to English",
       switchToLight: "Switch to light mode",
       switchToDark: "Switch to dark mode",
       welshLandscape: "Welsh landscape",
@@ -15,6 +15,8 @@ const translations = {
       notRegistered: "You are not registered for this application.",
       goHome: "Go Home",
       countryName: "Wales",
+      source: "Source",
+      readMore: "Read more",
     },
     // Nav
     nav: {
@@ -179,6 +181,8 @@ const translations = {
       notRegistered: "Nid ydych wedi cofrestru ar gyfer y rhaglen hon.",
       goHome: "Mynd adref",
       countryName: "Cymru",
+      source: "Ffynhonnell",
+      readMore: "Darllen mwy",
     },
     // Nav
     nav: {

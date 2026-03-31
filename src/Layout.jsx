@@ -82,7 +82,7 @@ export default function Layout({ children, currentPageName }) {
                 }}
                 title={lang === "en" ? t.common.switchToWelsh : t.common.switchToEnglish}
               >
-                {lang === "en" ? "CY" : "EN"}
+                {lang === "en" ? "CY" : "EN (English)"}
               </button>
 
               {/* Theme toggle — only rendered after mount to avoid hydration mismatch */}

@@ -85,6 +85,18 @@ export default function LocationCard({ location, index, onSelect }) {
         <p className="text-xs line-clamp-2 leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
           {lang === "cy" ? (location.description_cy || location.description) : location.description}
         </p>
+        {location.source_url && (
+          <a
+            href={location.source_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-3 text-[10px]"
+            style={{ color: "var(--hanes-gold)" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {t.common.source}: Wikipedia
+          </a>
+        )}
       </div>
     </motion.button>
   );

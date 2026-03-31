@@ -18,6 +18,7 @@ export const WELSH_ICONS = [
       "O hawliad dadleuol i orsedd Gwynedd, cododd Llywelyn i fod y rheolwr mwyaf pwerus a welodd Cymru erioed, gan uno'r tywysogion Cymreig o dan ei faner.",
     location_name: "Aberffraw, Anglesey",
     location_name_cy: "Aberffraw, Ynys Môn",
+    source_url: "https://en.wikipedia.org/wiki/Llywelyn_the_Great",
     image_url: null,
   },
   {
@@ -39,6 +40,7 @@ export const WELSH_ICONS = [
       "Yn 1400, arweiniodd Owain wrthryfel a ysgydwodd sylfeini rheolaeth Lloegr. Am dros ddegawd, rheolodd ran helaeth o Gymru a sefydlodd senedd Gymreig.",
     location_name: "Sycharth, Powys",
     location_name_cy: "Sycharth, Powys",
+    source_url: "https://en.wikipedia.org/wiki/Owain_Glynd%C5%B5r",
     image_url: null,
   },
   {
@@ -60,6 +62,7 @@ export const WELSH_ICONS = [
       "Pan atododd lluoedd Rhufain ei thiroedd a cham-drin ei theulu, unodd Boudicca y llwythau Celtaidd mewn gwrthryfel ffyrnig a fu bron gyrru'r Rhufeiniaid o Brydain.",
     location_name: "Camulodunum (Colchester)",
     location_name_cy: "Camulodunum (Colchester)",
+    source_url: "https://en.wikipedia.org/wiki/Boudica",
     image_url: null,
   },
   {
@@ -81,6 +84,7 @@ export const WELSH_ICONS = [
       "Wedi'i eni yng Nghymru, cododd Harri ei faner yn Aberdaugleddau a gorymdeithio dan y Ddraig Goch i Faes Bosworth, lle hawliodd goron Lloegr.",
     location_name: "Pembroke Castle",
     location_name_cy: "Castell Penfro",
+    source_url: "https://en.wikipedia.org/wiki/Henry_VII_of_England",
     image_url: null,
   },
   {
@@ -102,6 +106,7 @@ export const WELSH_ICONS = [
       "O feysydd glo Tredegar, ymladdodd Bevan ei ffordd i San Steffan a thrawsnewid cymdeithas Brydeinig trwy greu gwasanaeth iechyd am ddim ar adeg angen.",
     location_name: "Tredegar, Blaenau Gwent",
     location_name_cy: "Tredegar, Blaenau Gwent",
+    source_url: "https://en.wikipedia.org/wiki/Aneurin_Bevan",
     image_url: null,
   },
   {
@@ -123,6 +128,7 @@ export const WELSH_ICONS = [
       "Mewn oes o ddiwydiannu a oedd yn bygwth dileu diwylliant Cymru, hyrwyddodd y Foneddiges Llanover yr iaith Gymraeg, cerddoriaeth a gwisgoedd, gan gadw traddodiadau i genedlaethau'r dyfodol.",
     location_name: "Llanover, Monmouthshire",
     location_name_cy: "Llan-ffwyst, Sir Fynwy",
+    source_url: "https://en.wikipedia.org/wiki/Augusta_Hall,_Baroness_Llanover",
     image_url: null,
   },
 ];
@@ -141,6 +147,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 53.1388,
     longitude: -4.277,
+    source_url: "https://en.wikipedia.org/wiki/Caernarfon_Castle",
     qr_code_id: null,
   },
   {
@@ -156,6 +163,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 51.6978,
     longitude: -2.6757,
+    source_url: "https://en.wikipedia.org/wiki/Tintern_Abbey",
     qr_code_id: null,
   },
   {
@@ -171,6 +179,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 52.8601,
     longitude: -4.104,
+    source_url: "https://en.wikipedia.org/wiki/Harlech_Castle",
     qr_code_id: null,
   },
   {
@@ -186,6 +195,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 53.0685,
     longitude: -4.0763,
+    source_url: "https://en.wikipedia.org/wiki/Yr_Wyddfa",
     qr_code_id: null,
   },
   {
@@ -201,6 +211,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 53.2638,
     longitude: -4.0889,
+    source_url: "https://en.wikipedia.org/wiki/Beaumaris_Castle",
     qr_code_id: null,
   },
   {
@@ -216,6 +227,7 @@ export const WELSH_LOCATIONS = [
     image_url: null,
     latitude: 52.0127,
     longitude: -4.7714,
+    source_url: "https://en.wikipedia.org/wiki/Pentre_Ifan",
     qr_code_id: null,
   },
 ];

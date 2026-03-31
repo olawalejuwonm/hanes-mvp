@@ -36,7 +36,7 @@ export default function Providers({ children }) {
   const currentPageName = PAGE_NAME_MAP[pathname] ?? '';
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <LanguageProvider>
         <QueryClientProvider client={queryClient}>
           <Layout currentPageName={currentPageName}>

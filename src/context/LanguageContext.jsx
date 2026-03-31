@@ -4,15 +4,23 @@ import React, { createContext, useContext, useState } from 'react';
 import translations from '@/i18n/translations';
 
 const LanguageContext = createContext({
-  lang: 'en',
-  t: translations.en,
+  lang: 'cy',
+  t: translations.cy,
   toggleLang: () => {},
 });
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(() => {
+    if (typeof window === 'undefined') return 'cy';
+    return localStorage.getItem('hanes-lang') || 'cy';
+  });
 
-  const toggleLang = () => setLang((prev) => (prev === 'en' ? 'cy' : 'en'));
+  const toggleLang = () =>
+    setLang((prev) => {
+      const next = prev === 'en' ? 'cy' : 'en';
+      localStorage.setItem('hanes-lang', next);
+      return next;
+    });
 
   return (
     <LanguageContext.Provider value={{ lang, t: translations[lang], toggleLang }}>

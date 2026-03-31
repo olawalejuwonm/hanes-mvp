@@ -89,6 +89,17 @@ export default function IconDetail() {
             <p className="leading-relaxed text-sm mb-8" style={{ color: "var(--app-text-muted)" }}>
               {iconStory}
             </p>
+            {icon.source_url && (
+              <a
+                href={icon.source_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs mb-8"
+                style={{ color: "var(--hanes-gold)" }}
+              >
+                {t.common.source}: Wikipedia ({t.common.readMore})
+              </a>
+            )}
 
             {icon.location_name && (
               <div
