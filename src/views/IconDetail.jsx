@@ -147,7 +147,7 @@ export default function IconDetail() {
             )}
           </div>
 
-          {/* 3D Preview */}
+          {/* Location Preview */}
           <div>
             <h2 className="text-xl font-semibold mb-4" style={{ color: "var(--app-text)" }}>
               {t.iconDetail.locationPreview}
@@ -156,10 +156,18 @@ export default function IconDetail() {
               className="aspect-square rounded-2xl overflow-hidden"
               style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
             >
-              <Scene3D type="castle" />
+              {icon.location_image_url ? (
+                <img
+                  src={icon.location_image_url}
+                  alt={`Photo of ${lang === "cy" ? (icon.location_name_cy || icon.location_name) : icon.location_name}`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Scene3D type="castle" />
+              )}
             </div>
             <p className="text-xs mt-3 text-center" style={{ color: "var(--app-text-subtle)" }}>
-              {t.iconDetail.rotateHint}
+              {lang === "cy" ? (icon.location_name_cy || icon.location_name) : icon.location_name}
             </p>
           </div>
         </div>
