@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { createPageUrl } from "@/utils";
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Star, Shield, Sword, Crown, Landmark, Cpu, PlayCircle, Zap, BookOpen, Award } from "lucide-react";
+import { ArrowLeft, MapPin, Shield, Sword, Crown, Landmark, Cpu, PlayCircle, Zap, BookOpen, Award } from "lucide-react";
 import { WELSH_ICONS } from "@/data/mockData";
 import { useLanguage } from "@/context/LanguageContext";
 
