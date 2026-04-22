@@ -197,7 +197,8 @@ export default function IconDetail() {
                   className="inline-flex items-center gap-2 text-sm mt-6 font-medium"
                   style={{ color: "var(--hanes-gold)" }}
                 >
-                  {t.common.source}: Wikipedia ↗
+                  {t.common.source}: Wikipedia
+                  <span aria-label="(opens in new window)">↗</span>
                 </a>
               )}
             </div>
