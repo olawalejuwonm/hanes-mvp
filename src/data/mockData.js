@@ -19,7 +19,10 @@ export const WELSH_ICONS = [
     location_name: "Aberffraw, Anglesey",
     location_name_cy: "Aberffraw, Ynys Môn",
     source_url: "https://en.wikipedia.org/wiki/Llywelyn_the_Great",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Llywelyn_the_Great.jpg/440px-Llywelyn_the_Great.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Aberffraw_Church.jpg/440px-Aberffraw_Church.jpg",
   },
   {
     id: "2",
@@ -41,7 +44,10 @@ export const WELSH_ICONS = [
     location_name: "Sycharth, Powys",
     location_name_cy: "Sycharth, Powys",
     source_url: "https://en.wikipedia.org/wiki/Owain_Glynd%C5%B5r",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/OwainGlyndwr.jpg/440px-OwainGlyndwr.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sycharth_motte.jpg/440px-Sycharth_motte.jpg",
   },
   {
     id: "3",
@@ -63,7 +69,10 @@ export const WELSH_ICONS = [
     location_name: "Camulodunum (Colchester)",
     location_name_cy: "Camulodunum (Colchester)",
     source_url: "https://en.wikipedia.org/wiki/Boudica",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Boudica_and_Her_Daughters.jpg/440px-Boudica_and_Her_Daughters.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Colchester_Castle.jpg/440px-Colchester_Castle.jpg",
   },
   {
     id: "4",
@@ -85,7 +94,10 @@ export const WELSH_ICONS = [
     location_name: "Pembroke Castle",
     location_name_cy: "Castell Penfro",
     source_url: "https://en.wikipedia.org/wiki/Henry_VII_of_England",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/King_Henry_VII.jpg/440px-King_Henry_VII.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pembroke_Castle.jpg/440px-Pembroke_Castle.jpg",
   },
   {
     id: "5",
@@ -107,7 +119,10 @@ export const WELSH_ICONS = [
     location_name: "Tredegar, Blaenau Gwent",
     location_name_cy: "Tredegar, Blaenau Gwent",
     source_url: "https://en.wikipedia.org/wiki/Aneurin_Bevan",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Aneurin_Bevan.jpg/440px-Aneurin_Bevan.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Aneurin_Bevan_statue_in_Tredegar.jpg/440px-Aneurin_Bevan_statue_in_Tredegar.jpg",
   },
   {
     id: "6",
@@ -129,7 +144,10 @@ export const WELSH_ICONS = [
     location_name: "Llanover, Monmouthshire",
     location_name_cy: "Llan-ffwyst, Sir Fynwy",
     source_url: "https://en.wikipedia.org/wiki/Augusta_Hall,_Baroness_Llanover",
-    image_url: null,
+    image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Augusta_Hall_Baroness_Llanover.jpg/440px-Augusta_Hall_Baroness_Llanover.jpg",
+    location_image_url:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Llanover_Church.jpg/440px-Llanover_Church.jpg",
   },
 ];
 
