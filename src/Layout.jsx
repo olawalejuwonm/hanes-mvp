@@ -47,7 +47,7 @@ export default function Layout({ children, currentPageName }) {
               <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(to bottom right, var(--hanes-red), var(--hanes-red-dark))" }}>
                 <span className="text-white font-black text-sm">H</span>
               </div>
-              <span className="text-xl font-bold tracking-wider">
+              <span className="text-2xl font-bold tracking-wider">
                 <span style={{ color: "var(--hanes-red)" }}>HANES</span>
               </span>
             </Link>
@@ -58,7 +58,7 @@ export default function Layout({ children, currentPageName }) {
                 <Link
                   key={item.page}
                   href={createPageUrl(item.page)}
-                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
+                  className="px-4 py-2 rounded-lg text-base font-bold transition-all duration-300"
                   style={{
                     color: currentPageName === item.page ? "var(--hanes-red)" : "var(--app-text-muted)",
                     background: currentPageName === item.page ? "rgba(200,16,46,0.10)" : "transparent",
@@ -74,11 +74,11 @@ export default function Layout({ children, currentPageName }) {
               {/* Language toggle */}
               <button
                 onClick={toggleLang}
-                className="px-3 py-1.5 rounded-lg text-xs font-bold border transition-all duration-300"
+                className="px-3 py-1.5 rounded-lg text-sm font-bold border transition-all duration-300"
                 style={{
                   borderColor: "var(--app-border)",
-                  color: lang === "cy" ? "var(--hanes-red)" : "var(--app-text-muted)",
-                  background: lang === "cy" ? "rgba(200,16,46,0.08)" : "var(--app-surface)",
+                  color: lang === "cy" ? "var(--hanes-green)" : "var(--app-text-muted)",
+                  background: lang === "cy" ? "rgba(0,112,60,0.10)" : "var(--app-surface)",
                 }}
                 title={lang === "en" ? t.common.switchToWelsh : t.common.switchToEnglish}
               >
@@ -94,9 +94,9 @@ export default function Layout({ children, currentPageName }) {
                   title={isDark ? t.common.switchToLight : t.common.switchToDark}
                 >
                   {isDark ? (
-                    <Sun className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
+                    <Sun className="w-4 h-4" style={{ color: "var(--hanes-red)" }} />
                   ) : (
-                    <Moon className="w-4 h-4" style={{ color: "var(--app-text-muted)" }} />
+                    <Moon className="w-4 h-4" style={{ color: "var(--hanes-green)" }} />
                   )}
                 </button>
               )}
@@ -135,7 +135,7 @@ export default function Layout({ children, currentPageName }) {
                       key={item.page}
                       href={createPageUrl(item.page)}
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-bold transition-all duration-300"
                       style={{
                         color: currentPageName === item.page ? "var(--hanes-red)" : "var(--app-text-muted)",
                         background: currentPageName === item.page ? "rgba(200,16,46,0.10)" : "transparent",

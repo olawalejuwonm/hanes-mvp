@@ -2,46 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Nunito+Sans:wght@500;600;700;800;900&display=swap');
 
 /* App-level semantic tokens */
 :root {
-  /* Welsh brand colors - same in both themes */
+  /* Welsh brand colors */
   --hanes-red: #C8102E;
-  --hanes-red-dark: #8B0A1E;
+  --hanes-red-dark: #931024;
   --hanes-green: #00703C;
-  --hanes-gold: #D4A843;
+  --hanes-green-dark: #005d31;
+  --hanes-white: #FFFFFF;
 
-  /* Light mode */
-  --app-bg: #F0EDE6;
-  --app-bg-nav: rgba(240, 237, 230, 0.92);
-  --app-surface: rgba(0, 0, 0, 0.03);
-  --app-surface-hover: rgba(0, 0, 0, 0.06);
-  --app-border: rgba(0, 0, 0, 0.08);
-  --app-border-hover: rgba(0, 0, 0, 0.15);
-  --app-text: #1a1a1a;
-  --app-text-muted: rgba(26, 26, 26, 0.55);
-  --app-text-subtle: rgba(26, 26, 26, 0.35);
-  --app-overlay: rgba(240, 237, 230, 0.9);
-  --app-card-gradient-from: rgba(0, 0, 0, 0.6);
-  --app-dot-bg: #F0EDE6;
-  --app-scrollbar-track: #d8d4cc;
+  /* Light mode with Welsh white base */
+  --app-bg: #fffdf9;
+  --app-bg-nav: rgba(255, 253, 249, 0.95);
+  --app-surface: #ffffff;
+  --app-surface-hover: #f4fbf7;
+  --app-border: #bdd7c9;
+  --app-border-hover: #5a9f7d;
+  --app-text: #0f2a1d;
+  --app-text-muted: #274838;
+  --app-text-subtle: #416a56;
+  --app-overlay: rgba(15, 42, 29, 0.85);
+  --app-card-gradient-from: rgba(15, 42, 29, 0.78);
+  --app-dot-bg: #fffdf9;
+  --app-scrollbar-track: #dcebe2;
 }
 
 .dark {
-  --app-bg: #0D0F13;
-  --app-bg-nav: rgba(13, 15, 19, 0.9);
-  --app-surface: rgba(255, 255, 255, 0.02);
-  --app-surface-hover: rgba(255, 255, 255, 0.04);
-  --app-border: rgba(255, 255, 255, 0.05);
-  --app-border-hover: rgba(255, 255, 255, 0.10);
-  --app-text: rgba(255, 255, 255, 1);
-  --app-text-muted: rgba(255, 255, 255, 0.5);
-  --app-text-subtle: rgba(255, 255, 255, 0.3);
-  --app-overlay: rgba(13, 15, 19, 0.9);
-  --app-card-gradient-from: rgba(13, 15, 19, 1);
-  --app-dot-bg: #0D0F13;
-  --app-scrollbar-track: #1a1a2a;
+  --app-bg: #04190f;
+  --app-bg-nav: rgba(4, 25, 15, 0.94);
+  --app-surface: #0d2a1d;
+  --app-surface-hover: #123826;
+  --app-border: #245a3f;
+  --app-border-hover: #5a9f7d;
+  --app-text: #f8fffb;
+  --app-text-muted: #d7e9de;
+  --app-text-subtle: #a5cab5;
+  --app-overlay: rgba(4, 25, 15, 0.88);
+  --app-card-gradient-from: rgba(4, 25, 15, 0.92);
+  --app-dot-bg: #04190f;
+  --app-scrollbar-track: #113423;
 }
 
 @layer base {
@@ -97,8 +98,48 @@
   body {
     background-color: var(--app-bg);
     color: var(--app-text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  p,
+  li,
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  label {
+    font-size: 1rem;
+  }
+
+  a {
+    color: var(--hanes-red);
+    text-underline-offset: 0.15em;
+  }
+
+  a:hover {
+    color: var(--hanes-red-dark);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--hanes-red);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
   }
 }
 
@@ -110,11 +151,11 @@
   background: var(--app-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--hanes-red);
+  background: var(--hanes-green);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--hanes-red-dark);
+  background: var(--hanes-green-dark);
 }
 
 /* Glow text effect */

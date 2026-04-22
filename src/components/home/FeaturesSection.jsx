@@ -6,7 +6,7 @@ import { Gamepad2, QrCode, Globe, Swords, MapPin, Sparkles } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext";
 
 const featureIcons = [Gamepad2, QrCode, Globe, Swords, MapPin, Sparkles];
-const featureColors = ["#D4A843", "#6B8ADB", "#5BA57D", "#C4635D", "#9B6BC4", "#D49A43"];
+const featureColors = ["#C8102E", "#00703C", "#C8102E", "#00703C", "#C8102E", "#00703C"];
 
 export default function FeaturesSection() {
   const { t } = useLanguage();
@@ -20,7 +20,7 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <span className="text-xs tracking-[0.3em] uppercase font-medium" style={{ color: "var(--hanes-gold)" }}>
+          <span className="text-sm tracking-[0.3em] uppercase font-bold" style={{ color: "var(--hanes-red)" }}>
             {t.features.tag}
           </span>
           <h2
@@ -29,7 +29,7 @@ export default function FeaturesSection() {
           >
             {t.features.heading}
           </h2>
-          <p className="max-w-xl mx-auto text-sm sm:text-base" style={{ color: "var(--app-text-muted)" }}>
+          <p className="max-w-xl mx-auto text-base sm:text-lg font-semibold" style={{ color: "var(--app-text-muted)" }}>
             {t.features.subheading}
           </p>
         </motion.div>
@@ -65,10 +65,10 @@ export default function FeaturesSection() {
                 >
                   <Icon className="w-5 h-5" style={{ color }} />
                 </div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--app-text)" }}>
+                <h3 className="text-2xl font-semibold mb-3" style={{ color: "var(--app-text)" }}>
                   {feature.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
+                <p className="text-base font-semibold leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
                   {feature.description}
                 </p>
               </motion.div>

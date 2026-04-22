@@ -1,11 +1,11 @@
 'use client';
 
 const CASTLE_COLORS = {
-  castle: { primary: "#4A5568", accent: "#D4A843", sky: "#1a2744" },
-  abbey: { primary: "#6B7280", accent: "#9B6BC4", sky: "#1a1a2e" },
-  monument: { primary: "#9CA3AF", accent: "#5BA57D", sky: "#0f2027" },
-  landscape: { primary: "#374151", accent: "#5BA57D", sky: "#0d1f2d" },
-  village: { primary: "#D1D5DB", accent: "#C4635D", sky: "#1e1e2e" },
+  castle: { primary: "#1f3f2d", accent: "#C8102E", sky: "#0b2317" },
+  abbey: { primary: "#2d4739", accent: "#00703C", sky: "#0c2a1c" },
+  monument: { primary: "#41594d", accent: "#C8102E", sky: "#132a1f" },
+  landscape: { primary: "#2f4f3c", accent: "#00703C", sky: "#0d2a1d" },
+  village: { primary: "#d8e7df", accent: "#C8102E", sky: "#123726" },
 };
 
 export default function Scene3D({ type = "castle" }) {
@@ -112,7 +112,7 @@ export default function Scene3D({ type = "castle" }) {
 
       {/* Type label */}
       <div
-        className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 text-sm font-bold tracking-widest uppercase px-3 py-1 rounded-full border"
         style={{ color: colors.accent, borderColor: colors.accent + "40", background: colors.accent + "10" }}
       >
         {type}

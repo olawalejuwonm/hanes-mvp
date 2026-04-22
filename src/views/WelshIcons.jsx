@@ -30,8 +30,8 @@ export default function WelshIcons() {
 
         {/* Header */}
         <div className="mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(212,168,67,0.10)", color: "var(--hanes-gold)", border: "1px solid rgba(212,168,67,0.20)" }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4"
+            style={{ background: "rgba(0,112,60,0.10)", color: "var(--hanes-green)", border: "1px solid rgba(0,112,60,0.20)" }}>
             <Users2 className="w-3.5 h-3.5" />
             {t.welshIcons.subheading}
           </div>
@@ -62,10 +62,10 @@ export default function WelshIcons() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setEraFilter("all")}
-              className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer"
+              className="px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 cursor-pointer"
               style={
                 eraFilter === "all"
-                  ? { background: "var(--hanes-gold)", color: "#0a0a0a", border: "1px solid var(--hanes-gold)" }
+                  ? { background: "var(--hanes-red)", color: "var(--hanes-white)", border: "1px solid var(--hanes-red)" }
                   : { background: "var(--app-surface)", color: "var(--app-text-muted)", border: "1px solid var(--app-border)" }
               }
             >
@@ -75,10 +75,10 @@ export default function WelshIcons() {
               <button
                 key={era}
                 onClick={() => setEraFilter(era)}
-                className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer"
+                className="px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 cursor-pointer"
                 style={
                   eraFilter === era
-                    ? { background: "var(--hanes-gold)", color: "#0a0a0a", border: "1px solid var(--hanes-gold)" }
+                    ? { background: "var(--hanes-red)", color: "var(--hanes-white)", border: "1px solid var(--hanes-red)" }
                     : { background: "var(--app-surface)", color: "var(--app-text-muted)", border: "1px solid var(--app-border)" }
                 }
               >

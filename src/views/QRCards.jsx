@@ -19,15 +19,15 @@ export default function QRCards() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
           >
-            <QrCode className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
-            <span className="text-xs tracking-widest uppercase" style={{ color: "var(--app-text-muted)" }}>
+            <QrCode className="w-4 h-4" style={{ color: "var(--hanes-green)" }} />
+            <span className="text-sm tracking-widest uppercase font-bold" style={{ color: "var(--app-text-muted)" }}>
               {t.qrCards.tag}
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--app-text)" }}>
-            <span style={{ color: "var(--hanes-gold)" }}>{t.qrCards.heading}</span>
+            <span style={{ color: "var(--hanes-red)" }}>{t.qrCards.heading}</span>
           </h1>
-          <p className="max-w-xl mx-auto text-sm sm:text-base" style={{ color: "var(--app-text-muted)" }}>
+          <p className="max-w-xl mx-auto text-base sm:text-lg font-semibold" style={{ color: "var(--app-text-muted)" }}>
             {t.qrCards.subheading}
           </p>
         </div>
@@ -40,11 +40,11 @@ export default function QRCards() {
               className="p-6 rounded-2xl text-center"
               style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
             >
-              <span className="text-2xl font-black" style={{ color: "var(--hanes-gold)" }}>{item.step}</span>
-              <h3 className="text-sm font-semibold mt-3 mb-2" style={{ color: "var(--app-text)" }}>
+              <span className="text-2xl font-black" style={{ color: idx % 2 === 0 ? "var(--hanes-red)" : "var(--hanes-green)" }}>{item.step}</span>
+              <h3 className="text-base font-bold mt-3 mb-2" style={{ color: "var(--app-text)" }}>
                 {item.title}
               </h3>
-              <p className="text-xs" style={{ color: "var(--app-text-subtle)" }}>{item.desc}</p>
+              <p className="text-base font-semibold" style={{ color: "var(--app-text-subtle)" }}>{item.desc}</p>
             </div>
           ))}
         </div>

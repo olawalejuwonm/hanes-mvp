@@ -73,21 +73,21 @@ export default function Timeline() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}
           >
-            <Clock className="w-4 h-4" style={{ color: "var(--hanes-gold)" }} />
-            <span className="text-xs tracking-widest uppercase" style={{ color: "var(--app-text-muted)" }}>
+            <Clock className="w-4 h-4" style={{ color: "var(--hanes-green)" }} />
+            <span className="text-sm tracking-widest uppercase font-bold" style={{ color: "var(--app-text-muted)" }}>
               {t.timeline.tag}
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: "var(--app-text)" }}>
             {t.timeline.heading.split(" ").map((word, i, arr) =>
               i === arr.length - 1 || i === arr.length - 2 ? (
-                <span key={i} style={{ color: "var(--hanes-gold)" }}>{word} </span>
+                <span key={i} style={{ color: "var(--hanes-red)" }}>{word} </span>
               ) : (
                 <span key={i}>{word} </span>
               )
             )}
           </h1>
-          <p className="max-w-xl mx-auto text-sm sm:text-base" style={{ color: "var(--app-text-muted)" }}>
+          <p className="max-w-xl mx-auto text-base sm:text-lg font-semibold" style={{ color: "var(--app-text-muted)" }}>
             {t.timeline.subheading}
           </p>
         </div>

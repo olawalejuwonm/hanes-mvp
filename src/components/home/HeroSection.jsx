@@ -51,7 +51,7 @@ export default function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
             <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--hanes-red)" }} />
-            <span className="text-xs sm:text-sm text-white/80 tracking-widest uppercase">
+            <span className="text-sm sm:text-base font-bold text-white tracking-widest uppercase">
               {t.hero.badge}
             </span>
           </div>
@@ -70,7 +70,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg sm:text-xl lg:text-2xl text-white/70 font-light mb-4 tracking-wide"
+          className="text-xl sm:text-2xl lg:text-3xl text-white font-bold mb-4 tracking-wide"
         >
           {t.hero.subtitle}
         </motion.p>
@@ -79,7 +79,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="text-sm sm:text-base text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg text-white max-w-2xl mx-auto mb-12 leading-relaxed font-semibold"
         >
           {t.hero.description}
         </motion.p>
@@ -92,7 +92,7 @@ export default function HeroSection() {
         >
           <Link
             href={createPageUrl("WelshIcons")}
-            className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold text-sm tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
+            className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-base tracking-wide hover:shadow-[0_0_40px_rgba(200,16,46,0.4)] transition-all duration-500"
             style={{ background: "linear-gradient(to right, var(--hanes-red), var(--hanes-red-dark))" }}
           >
             <Play className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href={createPageUrl("QRCards")}
-            className="flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 rounded-xl text-white/90 font-medium text-sm tracking-wide hover:bg-white/20 transition-all duration-300"
+            className="flex items-center gap-3 px-8 py-4 bg-white/90 border border-white rounded-xl text-[var(--hanes-green)] font-bold text-base tracking-wide hover:bg-white transition-all duration-300"
           >
             <QrCode className="w-4 h-4" />
             {t.hero.exploreQR}

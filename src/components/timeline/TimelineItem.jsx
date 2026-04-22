@@ -4,32 +4,32 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const ERA_COLORS = {
-  celtic: "#5BA57D",
-  roman: "#C4635D",
-  medieval: "#D4A843",
-  tudor: "#9B6BC4",
-  industrial: "#6B8ADB",
-  modern: "#D49A43",
+  celtic: "#00703C",
+  roman: "#C8102E",
+  medieval: "#C8102E",
+  tudor: "#00703C",
+  industrial: "#C8102E",
+  modern: "#00703C",
 };
 
 // Match by known English names as fallback
 const ERA_COLORS_BY_NAME = {
-  "Celtic Age": "#5BA57D",
-  "Oes Geltaidd": "#5BA57D",
-  "Roman Era": "#C4635D",
-  "Cyfnod Rhufeinig": "#C4635D",
-  "Medieval Wales": "#D4A843",
-  "Cymru Ganoloesol": "#D4A843",
-  "Tudor Period": "#9B6BC4",
-  "Cyfnod Tuduriaid": "#9B6BC4",
-  "Industrial Age": "#6B8ADB",
-  "Oes Ddiwydiannol": "#6B8ADB",
-  "Modern Wales": "#D49A43",
-  "Cymru Fodern": "#D49A43",
+  "Celtic Age": "#00703C",
+  "Oes Geltaidd": "#00703C",
+  "Roman Era": "#C8102E",
+  "Cyfnod Rhufeinig": "#C8102E",
+  "Medieval Wales": "#C8102E",
+  "Cymru Ganoloesol": "#C8102E",
+  "Tudor Period": "#00703C",
+  "Cyfnod Tuduriaid": "#00703C",
+  "Industrial Age": "#C8102E",
+  "Oes Ddiwydiannol": "#C8102E",
+  "Modern Wales": "#00703C",
+  "Cymru Fodern": "#00703C",
 };
 
 export default function TimelineItem({ era, index, isActive, onClick }) {
-  const color = ERA_COLORS_BY_NAME[era.name] || ERA_COLORS[era.id] || "#D4A843";
+  const color = ERA_COLORS_BY_NAME[era.name] || ERA_COLORS[era.id] || "#C8102E";
 
   return (
     <motion.div
@@ -69,13 +69,13 @@ export default function TimelineItem({ era, index, isActive, onClick }) {
               }
             }}
           >
-            <span className="text-xs tracking-[0.2em] uppercase font-medium" style={{ color }}>
+            <span className="text-sm tracking-[0.2em] uppercase font-bold" style={{ color }}>
               {era.years}
             </span>
             <h3 className="text-xl sm:text-2xl font-bold mt-2 mb-3" style={{ color: "var(--app-text)" }}>
               {era.name}
             </h3>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
+            <p className="text-base font-semibold leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
               {era.description}
             </p>
             {era.icons?.length > 0 && (
@@ -83,7 +83,7 @@ export default function TimelineItem({ era, index, isActive, onClick }) {
                 {era.icons.map((icon, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-xs"
+                    className="px-3 py-1 rounded-full text-sm font-semibold"
                     style={{ background: "var(--app-surface)", color: "var(--app-text-muted)" }}
                   >
                     {icon}

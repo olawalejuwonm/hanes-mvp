@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { MapPin, X } from "lucide-react";
+import { MapPin, X, Trophy, ShieldCheck, Flag } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationCard from "@/components/locations/LocationCard";
 import Scene3D from "@/components/viewer/Scene3D";
@@ -12,6 +12,7 @@ export default function Locations() {
   const [selected, setSelected] = useState(null);
   const { t, lang } = useLanguage();
   const locations = WELSH_LOCATIONS;
+  const totalXp = locations.length * 120;
 
   return (
     <div className="min-h-screen pt-24 sm:pt-28 pb-20 px-4">
@@ -19,16 +20,40 @@ export default function Locations() {
         {/* Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(212,168,67,0.10)" }}>
-              <MapPin className="w-5 h-5" style={{ color: "var(--hanes-gold)" }} />
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "rgba(0,112,60,0.12)", border: "1px solid rgba(0,112,60,0.25)" }}>
+              <MapPin className="w-6 h-6" style={{ color: "var(--hanes-green)" }} />
             </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--app-text)" }}>
+              <h1 className="text-4xl sm:text-5xl font-bold" style={{ color: "var(--app-text)" }}>
                 {t.locations.heading}
               </h1>
-              <p className="text-sm mt-1" style={{ color: "var(--app-text-subtle)" }}>
+              <p className="text-base mt-1" style={{ color: "var(--app-text-muted)" }}>
                 {t.locations.subheading}
               </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6" aria-label="Mission progress overview">
+            <div className="rounded-xl p-4" style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}>
+              <div className="flex items-center gap-2 mb-1">
+                <Trophy className="w-5 h-5" style={{ color: "var(--hanes-red)" }} />
+                <p className="text-sm font-bold" style={{ color: "var(--app-text-muted)" }}>XP Pool</p>
+              </div>
+              <p className="text-2xl font-black" style={{ color: "var(--app-text)" }}>{totalXp}</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}>
+              <div className="flex items-center gap-2 mb-1">
+                <ShieldCheck className="w-5 h-5" style={{ color: "var(--hanes-green)" }} />
+                <p className="text-sm font-bold" style={{ color: "var(--app-text-muted)" }}>Missions</p>
+              </div>
+              <p className="text-2xl font-black" style={{ color: "var(--app-text)" }}>{locations.length}</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: "var(--app-surface)", border: "1px solid var(--app-border)" }}>
+              <div className="flex items-center gap-2 mb-1">
+                <Flag className="w-5 h-5" style={{ color: "var(--hanes-red)" }} />
+                <p className="text-sm font-bold" style={{ color: "var(--app-text-muted)" }}>Current Rank</p>
+              </div>
+              <p className="text-2xl font-black" style={{ color: "var(--app-text)" }}>Dragon Scout</p>
             </div>
           </div>
         </div>
@@ -54,7 +79,7 @@ export default function Locations() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            style={{ background: "rgba(0,0,0,0.80)" }}
+            style={{ background: "rgba(4,25,15,0.88)" }}
             onClick={() => setSelected(null)}
           >
             <motion.div
@@ -64,13 +89,16 @@ export default function Locations() {
               className="w-full max-w-3xl rounded-2xl overflow-hidden"
               style={{ background: "var(--app-bg)", border: "1px solid var(--app-border)" }}
               onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-label={`3D preview for ${selected.name}`}
             >
               <div className="flex items-center justify-between p-5" style={{ borderBottom: "1px solid var(--app-border)" }}>
                 <div>
-                  <h3 className="text-lg font-semibold" style={{ color: "var(--app-text)" }}>
+                  <h3 className="text-2xl font-semibold" style={{ color: "var(--app-text)" }}>
                     {selected.name}
                   </h3>
-                  <p className="text-xs" style={{ color: "var(--app-text-subtle)" }}>
+                  <p className="text-sm" style={{ color: "var(--app-text-subtle)" }}>
                     {lang === "cy" ? (selected.era_cy || selected.era) : selected.era}
                   </p>
                 </div>
@@ -78,6 +106,7 @@ export default function Locations() {
                   onClick={() => setSelected(null)}
                   className="p-2 rounded-lg transition-colors"
                   style={{ background: "var(--app-surface)" }}
+                  aria-label="Close location viewer"
                 >
                   <X className="w-5 h-5" style={{ color: "var(--app-text-muted)" }} />
                 </button>
@@ -86,7 +115,7 @@ export default function Locations() {
                 <Scene3D type={selected.ar_model_type || "castle"} />
               </div>
               <div className="p-5" style={{ borderTop: "1px solid var(--app-border)" }}>
-                <p className="text-sm" style={{ color: "var(--app-text-muted)" }}>
+                <p className="text-base" style={{ color: "var(--app-text-muted)" }}>
                   {lang === "cy" ? (selected.description_cy || selected.description) : selected.description}
                 </p>
               </div>

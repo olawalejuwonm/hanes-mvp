@@ -6,18 +6,18 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const eraIds = ["celtic", "roman", "medieval", "tudor", "industrial"];
 const eraColors = {
-  celtic: "#5BA57D",
-  roman: "#C4635D",
-  medieval: "#D4A843",
-  tudor: "#9B6BC4",
-  industrial: "#6B8ADB",
+  celtic: "#00703C",
+  roman: "#C8102E",
+  medieval: "#C8102E",
+  tudor: "#00703C",
+  industrial: "#C8102E",
 };
 const eraBgGradients = {
-  celtic: "from-emerald-900/20 to-transparent",
+  celtic: "from-green-900/20 to-transparent",
   roman: "from-red-900/20 to-transparent",
-  medieval: "from-amber-900/20 to-transparent",
-  tudor: "from-purple-900/20 to-transparent",
-  industrial: "from-blue-900/20 to-transparent",
+  medieval: "from-red-900/20 to-transparent",
+  tudor: "from-green-900/20 to-transparent",
+  industrial: "from-red-900/20 to-transparent",
 };
 
 export default function EraShowcase() {
@@ -46,7 +46,7 @@ export default function EraShowcase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-xs tracking-[0.3em] uppercase font-medium" style={{ color: "var(--hanes-gold)" }}>
+          <span className="text-sm tracking-[0.3em] uppercase font-bold" style={{ color: "var(--hanes-red)" }}>
             {t.eras.tag}
           </span>
           <h2
@@ -63,7 +63,7 @@ export default function EraShowcase() {
             <button
               key={era.id}
               onClick={() => setActiveEra(era.id)}
-              className="px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300"
+              className="px-4 sm:px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300"
               style={
                 activeEra === era.id
                   ? {
@@ -101,11 +101,11 @@ export default function EraShowcase() {
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3" style={{ color }}>
               {active.name}
             </h3>
-            <p className="text-sm mb-6 tracking-widest" style={{ color: "var(--app-text-subtle)" }}>
+            <p className="text-base font-semibold mb-6 tracking-widest" style={{ color: "var(--app-text-subtle)" }}>
               {/* years from the full data */}
               {["500 BC – 43 AD", "43 – 410 AD", "1000 – 1400", "1485 – 1603", "1760 – 1900"][eraIds.indexOf(activeEra)]}
             </p>
-            <p className="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
+            <p className="max-w-2xl mx-auto text-base sm:text-lg font-semibold leading-relaxed" style={{ color: "var(--app-text-muted)" }}>
               {active.description}
             </p>
           </motion.div>
