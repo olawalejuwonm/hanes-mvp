@@ -2,6 +2,7 @@ export const WELSH_ICONS = [
   {
     id: "1",
     name: "Llywelyn the Great",
+    name_cy: "Llywelyn Fawr",
     title: "Prince of Wales",
     title_cy: "Tywysog Cymru",
     era: "Medieval Wales",
@@ -15,7 +16,7 @@ export const WELSH_ICONS = [
     story_summary:
       "From a disputed claim to the throne of Gwynedd, Llywelyn rose to become the most powerful ruler Wales has ever seen, uniting the Welsh princes under his banner.",
     story_summary_cy:
-      "O hawliad dadleuol i orsedd Gwynedd, cododd Llywelyn i fod y rheolwr mwyaf pwerus a welodd Cymru erioed, gan uno'r tywysogion Cymreig o dan ei faner.",
+      "O hawliad anghydfod i orsedd Gwynedd, cododd Llywelyn i fod y rheolwr mwyaf pwerus a welodd Cymru erioed, gan uno'r tywysogion Cymraeg o dan ei faner.",
     location_name: "Aberffraw, Anglesey",
     location_name_cy: "Aberffraw, Ynys Môn",
     source_url: "https://en.wikipedia.org/wiki/Llywelyn_the_Great",
@@ -36,11 +37,11 @@ export const WELSH_ICONS = [
     description:
       "Owain Glyndŵr initiated the last Welsh rebellion against English rule and was the last person to hold the title Prince of Wales by native right.",
     description_cy:
-      "Dechreuodd Owain Glyndŵr y gwrthryfel Cymreig olaf yn erbyn rheolaeth Lloegr a ef oedd y person olaf i ddal y teitl Tywysog Cymru yn ôl hawl frodorol.",
+      "Dechreuodd Owain Glyndŵr y gwrthryfel Cymraeg olaf yn erbyn rheolaeth Lloegr a ef oedd y person olaf i ddal y teitl Tywysog Cymru yn ôl hawl frodorol.",
     story_summary:
       "In 1400, Owain led a revolt that shook the foundations of English rule. For over a decade, he controlled much of Wales and established a Welsh parliament.",
     story_summary_cy:
-      "Yn 1400, arweiniodd Owain wrthryfel a ysgydwodd sylfeini rheolaeth Lloegr. Am dros ddegawd, rheolodd ran helaeth o Gymru a sefydlodd senedd Gymreig.",
+      "Yn 1400, arweiniodd Owain wrthryfel a grynodd sylfeini rheolaeth Lloegr. Am dros ddegawd, rheolodd llawer o Gymru a sefydlodd senedd Gymraeg.",
     location_name: "Sycharth, Powys",
     location_name_cy: "Sycharth, Powys",
     source_url: "https://en.wikipedia.org/wiki/Owain_Glynd%C5%B5r",
@@ -65,7 +66,7 @@ export const WELSH_ICONS = [
     story_summary:
       "When Roman forces annexed her lands and mistreated her family, Boudicca united the Celtic tribes in a furious rebellion that nearly drove the Romans from Britain.",
     story_summary_cy:
-      "Pan atododd lluoedd Rhufain ei thiroedd a cham-drin ei theulu, unodd Boudicca y llwythau Celtaidd mewn gwrthryfel ffyrnig a fu bron gyrru'r Rhufeiniaid o Brydain.",
+      "Pan gyfeddianodd lluoedd Rhufain ei thiroedd a cham-drin ei theulu, unodd Boudicca y llwythau Celtaidd mewn gwrthryfel ffyrnig a fu bron gyrru'r Rhufeiniaid o Brydain.",
     location_name: "Camulodunum (Colchester)",
     location_name_cy: "Camulodunum (Colchester)",
     source_url: "https://en.wikipedia.org/wiki/Boudica",
@@ -90,7 +91,7 @@ export const WELSH_ICONS = [
     story_summary:
       "Born in Wales, Henry raised his standard at Milford Haven and marched under the Red Dragon to Bosworth Field, where he claimed the English crown.",
     story_summary_cy:
-      "Wedi'i eni yng Nghymru, cododd Harri ei faner yn Aberdaugleddau a gorymdeithio dan y Ddraig Goch i Faes Bosworth, lle hawliodd goron Lloegr.",
+      "Wedi'i eni yng Nghymru, cododd Harri ei safonau yn Aberdaugleddau a gorymdeithio dan y Ddraig Goch i Faes Bosworth, lle hawliodd goron Lloegr.",
     location_name: "Pembroke Castle",
     location_name_cy: "Castell Penfro",
     source_url: "https://en.wikipedia.org/wiki/Henry_VII_of_England",
@@ -111,7 +112,7 @@ export const WELSH_ICONS = [
     description:
       "Aneurin Bevan was a Welsh Labour politician who served as Minister of Health in the post-war Attlee government, creating the National Health Service.",
     description_cy:
-      "Roedd Aneurin Bevan yn wleidydd Llafur Cymreig a wasanaethodd fel Gweinidog Iechyd yn llywodraeth Attlee ar ôl y rhyfel, gan greu'r Gwasanaeth Iechyd Gwladol.",
+      "Roedd Aneurin Bevan yn wleidydd Llafur Cymraeg a wasanaethodd fel Gweinidog Iechyd yn llywodraeth Attlee ar ôl y rhyfel, gan greu'r Gwasanaeth Iechyd Gwladol.",
     story_summary:
       "From the coalfields of Tredegar, Bevan fought his way to Westminster and transformed British society by creating a health service free at the point of need.",
     story_summary_cy:
@@ -127,6 +128,7 @@ export const WELSH_ICONS = [
   {
     id: "6",
     name: "Lady Llanover",
+    name_cy: "Boneddigais Llanover",
     title: "Champion of Welsh Culture",
     title_cy: "Hyrwyddwr Diwylliant Cymru",
     era: "Industrial Age",
@@ -140,7 +142,7 @@ export const WELSH_ICONS = [
     story_summary:
       "In an age of industrialisation threatening to erase Welsh culture, Lady Llanover championed the Welsh language, music, and costume, preserving traditions for future generations.",
     story_summary_cy:
-      "Mewn oes o ddiwydiannu a oedd yn bygwth dileu diwylliant Cymru, hyrwyddodd y Foneddiges Llanover yr iaith Gymraeg, cerddoriaeth a gwisgoedd, gan gadw traddodiadau i genedlaethau'r dyfodol.",
+      "Mewn oes o ddiwydiannu a oedd yn bygwth dileu diwylliant Cymru, hyrwyddodd y Foneddigais Llanover yr iaith Gymraeg, cerddoriaeth a gwisgoedd, gan gadw traddodiadau i genedlaethau'r dyfodol.",
     location_name: "Llanover, Monmouthshire",
     location_name_cy: "Llan-ffwyst, Sir Fynwy",
     source_url: "https://en.wikipedia.org/wiki/Augusta_Hall,_Baroness_Llanover",

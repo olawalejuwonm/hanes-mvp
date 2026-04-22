@@ -19,6 +19,7 @@ export default function WelshIcons() {
     const matchesSearch =
       !search ||
       icon.name?.toLowerCase().includes(search.toLowerCase()) ||
+      icon.name_cy?.toLowerCase().includes(search.toLowerCase()) ||
       icon.title?.toLowerCase().includes(search.toLowerCase());
     const matchesEra = eraFilter === "all" || icon.era === eraFilter;
     return matchesSearch && matchesEra;

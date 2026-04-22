@@ -171,11 +171,11 @@ const translations = {
       switchToEnglish: "Newid i Saesneg",
       switchToLight: "Newid i olau",
       switchToDark: "Newid i fod yn dywyll",
-      welshLandscape: "Tirlun Cymreig",
+      welshLandscape: "Tirlun Cymraeg",
       playStory: "Chwarae stori",
       view3D: "Gweld 3D",
       unknownEra: "Cyfnod Anhysbys",
-      welshHeritageAR: "Treftadaeth Cymru AR",
+      welshHeritageAR: "Treftadaeth Gymraeg AR",
       scanToNavigateToRealLocation: "Sganiwch i lywio i'r lleoliad gwirioneddol yng Nghymru",
       accessDenied: "Mynediad wedi'i wrthod",
       notRegistered: "Nid ydych wedi cofrestru ar gyfer y rhaglen hon.",
@@ -195,10 +195,10 @@ const translations = {
     // Hero Section
     hero: {
       badge: "Hacathon Cymru Gyfan 2026",
-      subtitle: "Treftadaeth Cymru Trwy Realiti Estynedig",
+      subtitle: "Treftadaeth Gymraeg Trwy Realiti Estynedig",
       description:
-        "Camwch i esgidiau enwogion chwedlonol Cymru. Archwiliwch gestyll, meysydd brwydr, a safleoedd sanctaidd trwy AR trochi. Sganiwch gardiau QR i ddatgloi lleoliadau 3D a phrofi canrifoedd o ddiwylliant Cymreig.",
-      beginJourney: "Dechrau Eich Taith",
+        "Camwch i fewn i esgidiau enwogion chwedlonol Cymru. Archwiliwch gestyll, meysydd brwydr, a safleoedd sanctaidd trwy AR trochi. Sganiwch gardiau QR i ddatgloi lleoliadau 3D a gael profiad o ganrifoedd o ddiwylliant Cymraeg.",
+      beginJourney: "Dechrau Eich Daith",
       exploreQR: "Archwilio Cardiau QR",
     },
     // Features Section
@@ -209,7 +209,7 @@ const translations = {
         "Mae HANES yn pontio'r bwlch rhwng safleoedd treftadaeth ffisegol a phrofiadau digidol",
       items: [
         {
-          title: "Chwarae fel Enwogion Cymreig",
+          title: "Chwarae fel Enwogion Cymraeg",
           description:
             "Ymgorffori ffigurau chwedlonol o Boudicca i Owain Glyndŵr. Gwnewch benderfyniadau a luniodd hanes Cymru.",
         },
@@ -221,7 +221,7 @@ const translations = {
         {
           title: "Gwylwr Lleoliad 3D",
           description:
-            "Archwiliwch gestyll, abatai, a thirnodau Cymreig mewn 3D trochi. Cylchdroi, chwyddo, a darganfod manylion.",
+            "Archwiliwch gestyll, abatai, a thirnodau Cymraeg mewn 3D trochi. Cylchdroi, chwyddo, a darganfod manylion.",
         },
         {
           title: "Gêm yn Seiliedig ar Oes",
@@ -231,7 +231,7 @@ const translations = {
         {
           title: "Mapio Lleoliad Gwirioneddol",
           description:
-            "Mae pob lleoliad yn y gêm yn mapio i safle treftadaeth gwirioneddol Cymreig. Ewch yno yn bersonol i ddatgloi bonysau.",
+            "Mae pob lleoliad yn y gêm yn mapio i safle treftadaeth gwirioneddol Cymraeg. Ewch yno yn bersonol i ddatgloi bonysau.",
         },
         {
           title: "Realiti Estynedig",
@@ -260,7 +260,7 @@ const translations = {
         medieval:
           "Oes y tywysogion, cestyll, a choncwest. Ymladd ochr yn ochr â Llywelyn Fawr neu arwain gwrthryfel Owain Glyndŵr.",
         tudor:
-          "Brenhinllin Cymreig yn cymryd gorsedd Lloegr. Llywio gwleidyddiaeth llys y Tuduriaid a thrawsnewid cymdeithas Cymru.",
+          "Brenhinllin Cymraeg yn cymryd gorsedd Lloegr. Llywio gwleidyddiaeth llys y Tuduriaid a thrawsnewid cymdeithas Cymru.",
         industrial:
           "Glo, haearn, a chwyldro. Profi trawsnewid dramatig tirwedd Cymru a genedigaeth mudiadau gweithwyr.",
       },
@@ -268,7 +268,7 @@ const translations = {
     // Welsh Icons Page
     welshIcons: {
       heading: "Enwogion Cymru",
-      subheading: "Dewiswch eich cymeriad ac ailysgriffenwch hanes",
+      subheading: "Dewiswch eich gymeriad ac ailysgrifenwch hanes",
       searchPlaceholder: "Chwilio enwogion...",
       allEras: "Pob Oes",
       noResults: "Dim enwogion i'w cael",
@@ -283,7 +283,7 @@ const translations = {
       rotateHint: "Rhagolwg 3D rhyngweithiol • Cylchdroi i archwilio",
       notFound: "Enwog heb ei gael",
       defaultStory:
-        "Mae stori'r enwogyn Cymreig chwedlonol hwn yn ymestyn dros ddegawdau o frwydr, buddugoliaeth, a thrawsnewid diwylliannol.",
+        "Mae stori'r enwogyn Cymraeg chwedlonol hwn yn ymestyn dros ddegawdau o frwydr, buddugoliaeth, a thrawsnewid diwylliannol.",
       difficulties: {
         beginner: "Dechreuwyr",
         intermediate: "Canolradd",
