@@ -67,6 +67,7 @@ export default function IconDetail() {
   const heroGradient = eraGradients[icon.era] || eraGradients["Medieval Wales"];
   const diff = difficultyConfig[icon.difficulty];
   const displayEra = lang === "cy" ? (icon.era_cy || icon.era) : icon.era;
+  const displayName = lang === "cy" ? (icon.name_cy || icon.name) : icon.name;
   const displayTitle = lang === "cy" ? (icon.title_cy || icon.title) : icon.title;
   const displayLocation = lang === "cy" ? (icon.location_name_cy || icon.location_name) : icon.location_name;
   const comingSoonText =
@@ -124,7 +125,7 @@ export default function IconDetail() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-none tracking-tight mb-2">
-              {icon.name}
+              {displayName}
             </h1>
             <p className="text-white text-xl sm:text-2xl font-bold mb-8">{displayTitle}</p>
 

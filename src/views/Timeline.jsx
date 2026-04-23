@@ -31,6 +31,15 @@ const ERA_ICONS = {
   modern: ["David Lloyd George", "Aneurin Bevan"],
 };
 
+const ERA_ICONS_CY = {
+  celtic: ["Boudicca", "Caratacus"],
+  roman: ["Magnus Maximus"],
+  medieval: ["Llywelyn Fawr", "Owain Glyndŵr"],
+  tudor: ["Henry VII", "William Morgan"],
+  industrial: ["Boneddigais Llanover", "Robert Owen"],
+  modern: ["David Lloyd George", "Aneurin Bevan"],
+};
+
 const ERA_DESCRIPTIONS_EN = {
   celtic: "The era of druids, hill forts, and fierce tribal warriors. Celtic culture laid the foundation for Welsh identity with rich oral traditions, intricate metalwork, and a deep connection to the land.",
   roman: "Roman legions brought roads, forts, and new technologies to Wales. The clash between Roman order and Celtic spirit created a unique cultural fusion that persisted for centuries.",
@@ -41,10 +50,10 @@ const ERA_DESCRIPTIONS_EN = {
 };
 
 const ERA_DESCRIPTIONS_CY = {
-  celtic: "Cyfnod y derwyddon, caerau bryn, a rhyfelwyr llwythol ffyrnig. Gosododd diwylliant Celtaidd sylfaen hunaniaeth Cymreig gyda thraddodiadau llafar cyfoethog, gwaith metel cymhleth, a chysylltiad dwfn â'r tir.",
+  celtic: "Cyfnod y derwyddon, caerau bryn, a rhyfelwyr llwythol ffyrnig. Gosododd diwylliant Celtaidd sylfaen hunaniaeth Gymraeg gyda thraddodiadau llafar cyfoethog, gwaith metel cymhleth, a chysylltiad dwfn â'r tir.",
   roman: "Daeth llengoedd Rhufeinig â ffyrdd, caerau, a thechnolegau newydd i Gymru. Creodd gwrthdrawiad trefn Rufeinig ac ysbryd Celtaidd ymasiad diwylliannol unigryw a barhaodd am ganrifoedd.",
   medieval: "Oes aur tywysogion Cymru, cestyll nerthol, a gwrthdaro epig. O uno Llywelyn Fawr i wrthryfel mawr olaf Owain Glyndŵr dros annibyniaeth.",
-  tudor: "Gosododd buddugoliaeth Harri Tudur yn Bosworth frenhinllin Gymreig ar orsedd Lloegr. Gwelwyd yn yr oes hon Ddeddfau Uno a thrawsnewid cyfraith, iaith, a llywodraethiant Cymru.",
+  tudor: "Gosododd buddugoliaeth Harri Tudur yn Bosworth frenhinllin Gymraeg ar orsedd Lloegr. Gwelwyd yn yr oes hon Ddeddfau Uno a thrawsnewid cyfraith, iaith, a llywodraethiant Cymru.",
   industrial: "Newidiodd glo a haearn dirwedd Cymru. Atseiniodd y cymoedd â diwydiant wrth i weithwyr adeiladu peiriant yr Ymerodraeth Brydeinig gan ffurfio hunaniaeth newydd drwy gapel, côr, a rygbi.",
   modern: "O'r rhyfeloedd byd i ddatganoli, mae Cymru fodern wedi ymladd i gadw ei hiaith a'i diwylliant tra'n cofleidio newid. Mae'r Senedd bellach yn sefyll fel symbol o hunanlywodraethiant Cymru.",
 };
@@ -55,13 +64,14 @@ export default function Timeline() {
 
   const descriptions = lang === 'cy' ? ERA_DESCRIPTIONS_CY : ERA_DESCRIPTIONS_EN;
   const yearsByLang = lang === 'cy' ? ERA_YEARS_CY : ERA_YEARS;
+  const iconsByLang = lang === 'cy' ? ERA_ICONS_CY : ERA_ICONS;
 
   const ERAS = Object.keys(ERA_YEARS).map((id) => ({
     id,
     name: t.eras.names[id],
     years: yearsByLang[id],
     description: descriptions[id],
-    icons: ERA_ICONS[id],
+    icons: iconsByLang[id],
   }));
 
   return (

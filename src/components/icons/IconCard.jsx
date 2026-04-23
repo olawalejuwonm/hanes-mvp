@@ -35,6 +35,7 @@ export default function IconCard({ icon, index }) {
   const EraIcon = eraIcons[icon.era] || Shield;
   const eraGradient = eraGradients[icon.era] || eraGradients["Medieval Wales"];
   const displayEra = lang === "cy" ? (icon.era_cy || icon.era || t.common.unknownEra) : (icon.era || t.common.unknownEra);
+  const displayName = lang === "cy" ? (icon.name_cy || icon.name) : icon.name;
   const displayTitle = lang === "cy" ? (icon.title_cy || icon.title) : icon.title;
   const displayDesc = lang === "cy" ? (icon.description_cy || icon.description) : icon.description;
 
@@ -95,7 +96,7 @@ export default function IconCard({ icon, index }) {
         {/* Content */}
         <div className="px-5 pb-5">
           <h3 className="text-xl font-bold mt-3 mb-0.5 leading-tight" style={{ color: "var(--app-text)" }}>
-            {icon.name}
+            {displayName}
           </h3>
           <p className="text-base font-bold mb-3" style={{ color: "var(--hanes-red)", opacity: 0.9 }}>
             {displayTitle}
